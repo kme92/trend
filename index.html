@@ -1,42 +1,4 @@
 <!doctype html>
-  <!-- 
-
-       Copyright 2014 ObjectLabs Corp.  
-
-       MIT License
-
-       Permission is hereby granted, free of charge, to any person
-       obtaining a copy of this software and associated documentation files
-       (the "Software"), to deal in the Software without restriction,
-       including without limitation the rights to use, copy, modify, merge,
-       publish, distribute, sublicense, and/or sell copies of the Software,
-       and to permit persons to whom the Software is furnished to do so,
-       subject to the following conditions:  
-
-       The above copyright notice and this permission notice shall be
-       included in all copies or substantial portions of the Software. 
-
-       THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-       EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-       MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-       NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
-       BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
-       ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-       CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-       SOFTWARE. 
-
-       TITLE
-       Tractor Push: Node.js, socket.io, Ruby, MongoDB tailed cursor
-       demo
-       index.html - main client code.  Opens up a socket.io connection
-       to server and displays returned data dynamically.
-
-       by Ben Wen, ObjectLabs
-
-       ObjectLabs is the maker of MongoLab.com a cloud MongoDb-as-a-Service
-       provider.
-
--->
 <html xmlns='http://www.w3.org/1999/xhtml'>
     <head>
       <meta content='text/html;charset=utf-8'/>
@@ -60,7 +22,7 @@
 
 
 	  </style>
-	  <title>Tractor Push: MongoDB Tailable Cursor + Socket.IO demo</title>
+	  <title>trend</title>
 	<script src='/socket.io/socket.io.js'></script> 
         <script src="//ajax.googleapis.com/ajax/libs/dojo/1.8.3/dojo/dojo.js"
             data-dojo-config='async: true'>
@@ -77,7 +39,7 @@
 	    var socket = io.connect('/');
 	    socket.on('all', function (data) {
 	    oneone = dom.byId('oneone');
-	    oneone.innerHTML = 'Message type: ' + data.messagetype;
+	    oneone.innerHTML = 'Message type: ' + data.feedtype;
 	    onetwo = dom.byId('onetwo');
 	    onetwo.innerHTML = 'Sequence number: ' + data.ordinal;
 	    onethree = dom.byId('onethree');
@@ -88,7 +50,7 @@
 	    });
 	    socket.on('complex', function (data) {
 	    twoone = dom.byId('twoone');
-	    twoone.innerHTML = 'Message type: ' + data.messagetype;
+	    twoone.innerHTML = 'Message type: ' + data.feedtype;
 	    twotwo = dom.byId('twotwo');
 	    twotwo.innerHTML = 'Sequence number: ' + data.ordinal;
 	    twothree = dom.byId('twothree');
@@ -101,21 +63,9 @@
         </script>
     </head>
     <body>
-      <!-- Background -->
-      <div class="backimg">
-         <img class="fillscreen" alt='Tractor Engine, Copyright 2011 Ben Wen CC
-          BY-SA 3.0' src="http://blog.mongolab.com/wp-content/uploads/2012/03/tractor_engine_1600_Web.jpg"/> 
-      </div>
 
       <div class="titlebox">
-	<h1>Tractor Push</h1>
-	<h2> 
-	MongoDB <br/>
-	Tailable <br/> 
-	Cursor and <br/> 
-	Socket.IO Demo <br/>
-	from MongoLab 
-      </h2>
+	<h1>trend</h1>
       </div>
       <div class='container'>
 	<div class='content' style='top: 0; left: 0'>
@@ -141,51 +91,5 @@
 	  </div>
 	</div>
       </div>
-
-      <div class='descript'>
-      This demonstration of a Socket.IO client accepts two message streams from a server asynchronously.  The left box is updated on the arrival of the 'all messages' stream.  Messages can be one of three types: simple, array, or complex.  The right box is updated from a message stream of only the 'complex' type.  The streams are independent but draw from the same source.
-	
-<p> The server is running Node.js and uses Socket.IO.  It reads from a MongoDB capped collection using a tailable cursor.  The tailable cursor allows the server to pick up changes to the database dynamically.  A separate writer process writes to the database.
-	
-<p> The server components have been tested on Heroku's Celedon Cedar stack and Joyent's Cloud.  The MongoDB database is hosted at MongoLab.  Code at<br/>
-	  <a href="https://github.com/mongolab/tractorpush-server">https://github.com/mongolab/tractorpush-server</a>,<br/>
-	  <a href="https://github.com/mongolab/tractorpush-writer-ruby">https://github.com/mongolab/tractorpush-writer-ruby</a>, and<br/>
-	  <a href="https://github.com/mongolab/tractorpush-writer-node">https://github.com/mongolab/tractorpush-writer-node</a>.<br/>
-
-	
-	
-<p> Original Demo: 2012 March.  Updated 2013 March. Updated 2014 September.
-<p> 
-	Copyright 2012, 2013, 2014 ObjectLabs Corp.  
-	
-<p>	MIT License
-
-	
-<p>	Permission is hereby granted, free of charge, to any person
-	obtaining a copy of this software and associated documentation files
-	(the "Software"), to deal in the Software without restriction,
-	including without limitation the rights to use, copy, modify, merge,
-	publish, distribute, sublicense, and/or sell copies of the Software,
-	and to permit persons to whom the Software is furnished to do so,
-	subject to the following conditions:  
-
-<p>	The above copyright notice and this permission notice shall be
-	included in all copies or substantial portions of the Software. 
-
-<p>	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-	EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-	MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-	NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
-	BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
-	ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-	CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-	SOFTWARE. 
-
-<p>    Non-code content licensed under Creative Commons
-       Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) at
-       http://creativecommons.org/licenses/by-sa/3.0/
-
-
-</div>
     </body>
 </html>
