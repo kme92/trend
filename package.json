@@ -1,15 +1,18 @@
 {
-    "name": "TractorPush",
-    "description" : "A Node.js, socket.io, and MongoDB tailed cursor push demo.",
+    "name": "trend",
+    "description" : "Yet another realtime analytics application.",
     "dependencies": {
 	"mongodb": "1.4.10",
 	"socket.io" : "1.1.0" },
     "engines" : { 
 	"node" : "0.10.31",
         "npm" : "1.4.25" },
-    "keywords" : ["mongodb", "mongo", "mongolab", "node.js", "node", "socket.io", "WebSockets"],
+    "keywords" : ["mongodb", "mongo", "node.js", "node", "socket.io"],
     "version": "0.10.1",
-    "author" : "Ben Wen",
-    "contributors" :  {"mongodb - node.js driver" : "Christian Amor Kvalheim <christkv@gmail.com>, et. al.",
-		       "numerous valuable additions" : "Ryan Daigle, Heroku"}
+    "author" : "kevin me",
+  "repository": {
+  "type": "git",
+  "url": "git://github.com/chekmanirov/trend.git"
+	},
+  "license": "MIT"
 }
