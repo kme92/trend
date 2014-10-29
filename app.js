@@ -1,64 +1,3 @@
-//
-// Tractor Push: Node.js, socket.io, Ruby, MongoDB tailed cursor demo
-// app.js - main server that delivers index.html and responds to
-// socket.io requests.  Uses MongoDB tailed cursor to find data for
-// socket.io response. 
-//
-//
-//
-
-//
-// ObjectLabs is the maker of MongoLab.com a cloud, hosted MongoDb
-// service
-
-// Copyright 2014 ObjectLabs Corp.  
-
-// MIT License, except intervalEach()
-
-// Permission is hereby granted, free of charge, to any person
-// obtaining a copy of this software and associated documentation files
-// (the "Software"), to deal in the Software without restriction,
-// including without limitation the rights to use, copy, modify, merge,
-// publish, distribute, sublicense, and/or sell copies of the Software,
-// and to permit persons to whom the Software is furnished to do so,
-// subject to the following conditions:  
-
-// The above copyright notice and this permission notice shall be
-// included in all copies or substantial portions of the Software. 
-
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
-// BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
-// ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-// SOFTWARE. 
-
-//
-// intervalEach() is also Copyright 2009-2010 Christian Amor Kvalheim
-// see package.json for attributions.  
-//
-//
-// intervalEach() is licensed under the Apache License, Version 2.0
-// (the "Apache License"); you may not use this file except in
-// compliance with the Apache License.  You may obtain a copy of the
-// License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the Apache License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the Apache License for the specific language governing permissions and
-// limitations under the Apache License.
-//
-
-//
-// NB: I don't provide a durable connection to mongodb that retries on
-// failures. Instead I'm relying on a PaaS's durable restarts, ok
-// really it's a TODO.
-//
 
 var fs = require("fs"), 
 url = require("url"),
@@ -69,7 +8,7 @@ mongo = require("mongodb"),
 Cursor = mongo.Cursor;
 
 // Heroku-style environment variables
-var uristring = process.env.MONGOLAB_URI || "mongodb://localhost/testdatabase"; 
+var uristring = process.env.MONGOLAB_URI || "mongodb://heroku_app31103832:xxxx@ds047950.mongolab.com:47950/heroku_app31103832"; 
 var mongoUrl = url.parse (uristring);
 
 //
