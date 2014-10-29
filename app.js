@@ -38,7 +38,7 @@ function handler (req, res) {
 // A capped collection is needed to use tailable cursors
 //
 mongo.MongoClient.connect (uristring, function (err, db) { 
-    console.log ("Attempting connection to " + mongoUrl.protocol + "//" + mongoUrl.hostname + " (complete URL supressed).");
+	console.log(err);
     db.collection ("feed", function (err, collection) {
 	collection.isCapped(function (err, capped) { 
 	    if (err) {
