@@ -47,14 +47,14 @@ MongoClient.connect(uristring, function (err, db) {
     db.collection ("feed", function (err, collection) {
 	collection.isCapped(function (err, capped) { 
 	    if (err) {
-		console.log ("Error when detecting capped collection.  Aborting.  Capped collections are necessary for tailed cursors.");
+		console.log ("error getting capped collection");
 		process.exit(1);
 	    }
 	    if (!capped) {
-		console.log (collection.collectionName + " is not a capped collection. Aborting.  Please use a capped collection for tailable cursors.");
+		console.log ("uncapped collection");
 		process.exit(2);
 	    }
-	    console.log ("Success connecting to " + mongoUrl.protocol + "//" + mongoUrl.hostname + ".");
+	    console.log ("success connecting");
 	    startIOServer (collection);
 	});
     });
@@ -64,7 +64,7 @@ MongoClient.connect(uristring, function (err, db) {
 // Bind send action to "connection" event
 //
 function startIOServer (collection) {
-    console.log("Starting ...");
+    console.log("starting...");
 
     io.sockets.on("connection", function (socket) {
 	readAndSend(socket, collection);
