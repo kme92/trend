@@ -6,7 +6,7 @@ Cursor = mongo.Cursor,
 MongoClient = mongo.MongoClient,
 assert = require("assert");
 
-var uristring = /*add back once database configured*//*process.env.MONGOLAB_URI ||*/ "mongodb://serveradmin:welcome@ds047950.mongolab.com:47950/heroku_app31103832"; 
+var uristring = process.env.MONGOLAB_URI || "mongodb://admin:admin@ds051170.mongolab.com:51170/heroku_app31104561"; 
 var mongoUrl = url.parse (uristring);
 
 var app = require('express')();
@@ -30,11 +30,7 @@ access_token_secret: 'ZlP7lCaaLBqLzaPX0NlbneiVQ9vYf1LflnDMp4Ev2IGKy'
 });
 
 twit.stream('user', {track:'obama'}, function(stream) {
-stream.on('data', function(data) {
-    /*console.log(util.inspect(data));*/
-});
-// Disconnect stream after five seconds
-//setTimeout(stream.destroy, 5000);
+	//tracking obama for now
 });
 
 MongoClient.connect(uristring, function (err, db) { 
