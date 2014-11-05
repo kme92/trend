@@ -6,13 +6,9 @@ Cursor = mongo.Cursor,
 MongoClient = mongo.MongoClient,
 assert = require("assert");
 
-// Heroku-style environment variables
 var uristring = /*add back once database configured*//*process.env.MONGOLAB_URI ||*/ "mongodb://serveradmin:welcome@ds047950.mongolab.com:47950/heroku_app31103832"; 
 var mongoUrl = url.parse (uristring);
 
-//
-// Start http server and bind the socket.io service
-//
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
@@ -41,40 +37,58 @@ stream.on('data', function(data) {
 //setTimeout(stream.destroy, 5000);
 });
 
-console.log("here");
 MongoClient.connect(uristring, function (err, db) { 
-	console.log(err);
-    db.collection ("feed", function (err, collection) {
-	collection.isCapped(function (err, capped) { 
-	    if (err) {
-		console.log ("error getting capped collection");
-		process.exit(1);
-	    }
-	    if (!capped) {
-		console.log ("uncapped collection");
-		process.exit(2);
-	    }
-	    console.log ("success connecting");
-	    startIOServer (collection);
-	});
+	//console.log(err);
+	
+	db.collection('feed', function (err, collection) {
+		if(err)
+			{
+			process.exit(1);
+			}
+	
+		collection.drop(function(err, result) {
+			db.createCollection('feed', {'capped':true, 'size':8000000, 'max': 10000}, function(err, collection) {
+			    //assert.ok(collection instanceof Collection);
+			    assert.equal('feed', collection.collectionName);
+		
+			    collection.options(function(err, options) {
+			      assert.equal(true, options.capped);
+			      assert.ok(options.size >= 8000000);
+			      assert.ok(options.max == 10000);
+			    	});
+			    
+				collection.isCapped(function (err, capped) { 
+				    if (err) {
+					console.log ("error getting capped collection");
+					process.exit(2);
+				    }
+				    if (!capped) {
+					console.log ("uncapped collection");
+					process.exit(3);
+				    }
+				    console.log ("success connecting");
+				    twit.stream('user', {track:'obama'}, function(stream) {
+				    stream.on('data', function(data) {
+				    	 db.collection('feed', function(err, collection) {
+				               collection.insert({'data': data.text}, {safe:true}
+				                                 , function(err, result) {});
+			    	});
+				    });
+				    });
+				
+				    startIOServer (collection);
+				}); 
+			});
+		});
     });
 });
 
-//
-// Bind send action to "connection" event
-//
 function startIOServer (collection) {
     io.sockets.on("connection", function (socket) {
 	readAndSend(socket, collection);
     });
 };
 
-//
-// Read and send data to socket.
-// The real work is done here upon receiving a new client connection.
-// Queries the database twice and starts sending two types of messages to the client.
-// (known bug: if there are no documents in the collection, it doesn't work.)
-//
 function readAndSend (socket, collection) {
     collection.find({}, {"tailable": 1, "sort": [["$natural", 1]]}, function(err, cursor) {
 	cursor.intervalEach(300, function(err, item) { // intervalEach() is a duck-punched version of each() that waits N milliseconds between each iteration.
