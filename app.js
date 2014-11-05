@@ -1,10 +1,10 @@
 
 var url = require("url"),
 emitter = require("events").EventEmitter,
-MongoClient = require('mongodb').MongoClient,
-assert = require("assert"),
 mongo = require("mongodb"),
-Cursor = mongo.Cursor;
+Cursor = mongo.Cursor,
+MongoClient = mongo.MongoClient,
+assert = require("assert");
 
 // Heroku-style environment variables
 var uristring = /*add back once database configured*//*process.env.MONGOLAB_URI ||*/ "mongodb://serveradmin:welcome@ds047950.mongolab.com:47950/heroku_app31103832"; 
@@ -64,8 +64,6 @@ MongoClient.connect(uristring, function (err, db) {
 // Bind send action to "connection" event
 //
 function startIOServer (collection) {
-    console.log("starting...");
-
     io.sockets.on("connection", function (socket) {
 	readAndSend(socket, collection);
     });
