@@ -14,12 +14,11 @@ var mongoUrl = url.parse (uristring);
 //
 // Start http server and bind the socket.io service
 //
-var app = require("http").createServer(handler), // handler defined below
-io = require("socket.io").listen(app);
+var app = require('express')();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 
-theport = process.env.PORT || 2000;
-app.listen(theport);
-console.log ("http server on port: " + theport);
+server.listen(80);
 
 function handler (req, res) {
   fs.readFile(__dirname + "/index.html",
@@ -89,9 +88,6 @@ function readAndSend (socket, collection) {
     });
 };
 	
-
-// Duck-punching mongodb driver Cursor.each.  This now takes an interval that waits 
-// "interval" milliseconds before it makes the next object request... 
 Cursor.prototype.intervalEach = function(interval, callback) {
     var self = this;
     if (!callback) {
@@ -99,7 +95,6 @@ Cursor.prototype.intervalEach = function(interval, callback) {
     }
 
     if(this.state != Cursor.CLOSED) {
-	//FIX: stack overflow (on deep callback) (cred: https://github.com/limp/node-mongodb-native/commit/27da7e4b2af02035847f262b29837a94bbbf6ce2)
 	setTimeout(function(){
 	    // Fetch the next object until there is no more objects
 	    self.nextObject(function(err, item) {        
