@@ -35,13 +35,13 @@ access_token_secret: 'ZlP7lCaaLBqLzaPX0NlbneiVQ9vYf1LflnDMp4Ev2IGKy'
 
 twit.stream('user', {track:'obama'}, function(stream) {
 stream.on('data', function(data) {
-    console.log(util.inspect(data));
+    /*console.log(util.inspect(data));*/
 });
 // Disconnect stream after five seconds
 //setTimeout(stream.destroy, 5000);
 });
 
-
+console.log("here");
 MongoClient.connect(uristring, function (err, db) { 
 	console.log(err);
     db.collection ("feed", function (err, collection) {
