@@ -14,11 +14,12 @@ var mongoUrl = url.parse (uristring);
 //
 // Start http server and bind the socket.io service
 //
-var app = require('express')();
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
+var app = require("http").createServer(handler), // handler defined below
+io = require("socket.io").listen(app);
 
-server.listen(80);
+theport = process.env.PORT || 2000;
+app.listen(theport);
+console.log ("http server on port: " + theport);
 
 function handler (req, res) {
   fs.readFile(__dirname + "/index.html",
