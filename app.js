@@ -1,43 +1,48 @@
 
-var fs = require("fs"), 
-url = require("url"),
+var url = require("url"),
 emitter = require("events").EventEmitter,
+MongoClient = require('mongodb').MongoClient,
 assert = require("assert"),
-
 mongo = require("mongodb"),
 Cursor = mongo.Cursor;
 
 // Heroku-style environment variables
-var uristring = process.env.MONGOLAB_URI || "mongodb://heroku_app31103832:xxxx@ds047950.mongolab.com:47950/heroku_app31103832"; 
+var uristring = process.env.MONGOLAB_URI || "mongodb://serveradmin:welcome@ds047950.mongolab.com:47950/heroku_app31103832"; 
 var mongoUrl = url.parse (uristring);
 
 //
 // Start http server and bind the socket.io service
 //
-var app = require("http").createServer(handler), // handler defined below
-io = require("socket.io").listen(app);
+var app = require('express')();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 
-theport = process.env.PORT || 2000;
-app.listen(theport);
-console.log ("http server on port: " + theport);
+server.listen(2000);
 
-function handler (req, res) {
-  fs.readFile(__dirname + "/index.html",
-  function (err, data) {
-    if (err) {
-      res.writeHead(500);
-      return res.end("Error loading index.html");
-    }
-    res.writeHead(200);
-    res.end(data);
-  });
-}
+app.get('/', function (req, res) {
+	  res.sendFile(__dirname + '/index.html');
+	});
 
-//
-// Open mongo database connection
-// A capped collection is needed to use tailable cursors
-//
-mongo.MongoClient.connect (uristring, function (err, db) { 
+
+var util = require('util'),
+twitter = require('twitter');
+var twit = new twitter({
+consumer_key: 'Vyj3FZxj5vXXU52kxOgF1XTl4',
+consumer_secret: 'zRuYvqjoLN49HMXhXHzzt9lPccPUZU9i7jGlfoAHqZFcqyPqY4',
+access_token_key: '862470176-GsUOX29rM9M7pxVahZ1v4NR4UrkRQDwFzlSefI30',
+access_token_secret: 'ZlP7lCaaLBqLzaPX0NlbneiVQ9vYf1LflnDMp4Ev2IGKy'
+});
+
+twit.stream('user', {track:'obama'}, function(stream) {
+stream.on('data', function(data) {
+    console.log(util.inspect(data));
+});
+// Disconnect stream after five seconds
+//setTimeout(stream.destroy, 5000);
+});
+
+
+MongoClient.connect(uristring, function (err, db) { 
 	console.log(err);
     db.collection ("feed", function (err, collection) {
 	collection.isCapped(function (err, capped) { 
