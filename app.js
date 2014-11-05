@@ -7,7 +7,7 @@ mongo = require("mongodb"),
 Cursor = mongo.Cursor;
 
 // Heroku-style environment variables
-var uristring = process.env.MONGOLAB_URI || "mongodb://serveradmin:welcome@ds047950.mongolab.com:47950/heroku_app31103832"; 
+var uristring = /*add back once database configured*//*process.env.MONGOLAB_URI ||*/ "mongodb://serveradmin:welcome@ds047950.mongolab.com:47950/heroku_app31103832"; 
 var mongoUrl = url.parse (uristring);
 
 //
