@@ -30,10 +30,6 @@ access_token_key: '862470176-GsUOX29rM9M7pxVahZ1v4NR4UrkRQDwFzlSefI30',
 access_token_secret: 'ZlP7lCaaLBqLzaPX0NlbneiVQ9vYf1LflnDMp4Ev2IGKy'
 });
 
-twit.stream('user', {track:'mehran'}, function(stream) {
-	//tracking obama for now
-});
-
 MongoClient.connect(uristring, function (err, db) { 
 	//console.log(err);
 	
@@ -64,7 +60,7 @@ MongoClient.connect(uristring, function (err, db) {
 					process.exit(3);
 				    }
 				    console.log ("success connecting");
-				    twit.stream('user', {track:'obama'}, function(stream) {
+				    twit.stream('user', {track:'mehran'}, function(stream) {
 				    var index = 1;
 				    stream.on('data', function(data) {
 				    	console.log(util.inspect(data));
