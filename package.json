@@ -7,7 +7,7 @@
 	"express": "4.10.1",
 	"twitter": "0.2.13",
 	"newrelic" : "latest",
-	"ejs" : "~1.0.0", 
+	"ejs" : "~1.0.0" 
 		},
     "engines" : { 
 	"node" : "0.10.31",
