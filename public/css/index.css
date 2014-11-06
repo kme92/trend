@@ -62,6 +62,17 @@ padding-right: 30px;
 	display: none;
 }
 
+#brand {
+	padding-top: 15px;
+padding-bottom: 15px;
+line-height: 20px;
+margin: 0px;
+color: white;
+padding-right: 30px;
+font-weight: bold;
+font-size: 20pt;
+}
+
 /*	    body { background-color: #ddd; font-family: 'Arimo', helvetica neue, arial, sans-serif; margin-left: 15px; color: #000}
 	    h1   { font-size: 50px; margin: 5px; float: right; text-align: right; color: #d33 }
 	    h2   { font-size: 40px; margin: 5px; float: right; text-align: right }

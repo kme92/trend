@@ -10,50 +10,34 @@
 	<link rel="stylesheet" href="/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/css/index.css">
 	<script src='/socket.io/socket.io.js'></script> 
-	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<!--<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/angular.min.js"></script>
 	<script type="text/javascript" src="/js/angular-route.min.js"></script>
-	<script type="text/javascript" src="/js/angular-animate.min.js"></script>
+	<script type="text/javascript" src="/js/angular-animate.min.js"></script>-->
 	<script type="text/javascript" src="/js/googleanalytics.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.8.3/dojo/dojo.js" data-dojo-config='async: true'>
-	    // require the dom resource
-	    require(['dojo/dom', 'dojo/date/locale', 'dojo/domReady!'], function(dom) {
-
-
-	    function dateFormat(date, format) { return dojo.date.locale.format( date, {selector: 'date', datePattern:format });}
-	    function strip_id(key, value)  { return key == '_id' ? undefined : value; }
-
-	    var socket = io.connect('/');
-	    socket.on('all', function (data) {
-	    oneone = dom.byId('oneone');
-	    oneone.innerHTML = 'Message type: ' + data.feedtype;
-	    onetwo = dom.byId('onetwo');
-	    onetwo.innerHTML = 'index: ' + data.index;
-	    onethree = dom.byId('onethree');
-	    thisDate = new Date (data.time);
-	    onethree.innerHTML = 'Timestamp: ' + dateFormat(thisDate, 'MMMM d yyyy, h:mm:ss a z');
-	    onefour = dom.byId('onefour');
-	    onefour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
-	    });
-	    });
-        </script>
+	<script src="//ajax.googleapis.com/ajax/libs/dojo/1.8.3/dojo/dojo.js" data-dojo-config='async: true'></script>
+	<script src="/js/scripts/index.js"></script>
     </head>
     <body>
 
-      <div class="titlebox">
-	<h1>trend</h1>
-      </div>
-      <div class='container'>
-	<div class='content' style='top: 0; left: 0'>
-	  <div class='innercontent'>
-       <h3>All messages </h3>
-      <ul>
-	    <li id='oneone'>--</li>
-	    <li id='onetwo'>--</li>
-	    <li id='onethree'>--</li>
-	    <li id='onefour'>--</li>
-	  </ul>
-	  </div>
+<header class="header" role="banner">
+				<div class="container">
+					<div class="navbar-header">
+				<a class="navbar-brand" href="/profile">
+						<p id="brand">trend</p>
+</a>				
+</div>
+<ul class="nav navbar-nav navbar-right">
+        <li id="li-user"><p>kevin me</p></li>
+        <!--<li id="li-logout">
+        	<a id="logout" href="/logout"><span class="glyphicon glyphicon-log-out"></span></a>
+        </li>-->
+      </ul>
+</div>
+</header>
+      <div class="container" style="top: 100px; position: relative;">
+	<div class="content">
+	    <div id='onefour'></div>
 	</div>
       </div>
     </body>
