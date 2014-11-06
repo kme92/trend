@@ -1,3 +1,4 @@
+require('newrelic');
 
 var url = require("url"),
 emitter = require("events").EventEmitter,
@@ -66,8 +67,14 @@ MongoClient.connect(uristring, function (err, db) {
 				    twit.stream('user', {track:'obama'}, function(stream) {
 				    var index = 1;
 				    stream.on('data', function(data) {
+				    	console.log(util.inspect(data));
 				    	 db.collection('feed', function(err, collection) {
-				               collection.insert({'data': data.text, 'index': index}, {safe:true}
+				               collection.insert({
+				            	   'index': index,
+				            	   'data': data.text, 
+				            	   'date': data.created_at,
+				            	   'lang': data.lang
+				            	   }, {safe:true}
 				                                 , function(err, result) {
 				                                	 if(err==null)
 				                                		 {
