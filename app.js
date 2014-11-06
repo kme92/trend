@@ -1,6 +1,7 @@
 require('newrelic');
 
 var url = require("url"),
+express  = require('express'),
 emitter = require("events").EventEmitter,
 mongo = require("mongodb"),
 Cursor = mongo.Cursor,
@@ -13,12 +14,11 @@ var mongoUrl = url.parse (uristring);
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
+require('./app/routes.js')(app);
 
-server.listen(process.env.PORT || 2000);
-
-app.get('/', function (req, res) {
-	  res.sendFile(__dirname + '/index.html');
-	});
+server.listen(process.env.PORT || 8080);
 
 
 var util = require('util'),
@@ -60,7 +60,7 @@ MongoClient.connect(uristring, function (err, db) {
 					process.exit(3);
 				    }
 				    console.log ("success connecting");
-				    twit.stream('user', {track:'mehran'}, function(stream) {
+				    twit.stream('user', {track:'obama'}, function(stream) {
 				    var index = 1;
 				    stream.on('data', function(data) {
 				    	console.log(util.inspect(data));
