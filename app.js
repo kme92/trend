@@ -64,10 +64,16 @@ MongoClient.connect(uristring, function (err, db) {
 				    }
 				    console.log ("success connecting");
 				    twit.stream('user', {track:'obama'}, function(stream) {
+				    var index = 1;
 				    stream.on('data', function(data) {
 				    	 db.collection('feed', function(err, collection) {
-				               collection.insert({'data': data.text}, {safe:true}
-				                                 , function(err, result) {});
+				               collection.insert({'data': data.text, 'index': index}, {safe:true}
+				                                 , function(err, result) {
+				                                	 if(err==null)
+				                                		 {
+				                                		 index++;
+				                                		 }
+			                                		 });
 			    	});
 				    });
 				    });
@@ -87,19 +93,19 @@ function startIOServer (collection) {
 
 function readAndSend (socket, collection) {
     collection.find({}, {"tailable": 1, "sort": [["$natural", 1]]}, function(err, cursor) {
-	cursor.intervalEach(300, function(err, item) { // intervalEach() is a duck-punched version of each() that waits N milliseconds between each iteration.
+	cursor.intervalEach(300, function(err, item) { 
 	    if(item != null) {
 		socket.emit("all", item); // sends to clients subscribed to type "all"
 	    }
 	});
     });
-    collection.find({"feedtype":"complex"}, {"tailable": 1, "sort": [["$natural", 1]]}, function(err, cursor) {
+    /*collection.find({"feedtype":"complex"}, {"tailable": 1, "sort": [["$natural", 1]]}, function(err, cursor) {
 	cursor.intervalEach(900, function(err, item) {
 	    if(item != null) {
 		socket.emit("complex", item); // sends to clients subscribe to type "complex"
 	    }
 	});
-    });
+    });*/
 };
 	
 Cursor.prototype.intervalEach = function(interval, callback) {

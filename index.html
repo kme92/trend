@@ -22,7 +22,7 @@
 
 
 	  </style>
-	  <title>trend</title>
+	  <title>trend | obama</title>
 	<script src='/socket.io/socket.io.js'></script> 
         <script src="//ajax.googleapis.com/ajax/libs/dojo/1.8.3/dojo/dojo.js"
             data-dojo-config='async: true'>
@@ -41,14 +41,14 @@
 	    oneone = dom.byId('oneone');
 	    oneone.innerHTML = 'Message type: ' + data.feedtype;
 	    onetwo = dom.byId('onetwo');
-	    onetwo.innerHTML = 'Sequence number: ' + data.ordinal;
+	    onetwo.innerHTML = 'index: ' + data.index;
 	    onethree = dom.byId('onethree');
 	    thisDate = new Date (data.time);
 	    onethree.innerHTML = 'Timestamp: ' + dateFormat(thisDate, 'MMMM d yyyy, h:mm:ss a z');
 	    onefour = dom.byId('onefour');
 	    onefour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
 	    });
-	    socket.on('complex', function (data) {
+	    /*socket.on('complex', function (data) {
 	    twoone = dom.byId('twoone');
 	    twoone.innerHTML = 'Message type: ' + data.feedtype;
 	    twotwo = dom.byId('twotwo');
@@ -58,7 +58,7 @@
 	    twothree.innerHTML = 'Timestamp: ' + dateFormat(thisDate, 'MMMM d yyyy, h:mm:ss a z');
 	    twofour = dom.byId('twofour');
 	    twofour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
-	    });
+	    });*/
 	    });
         </script>
     </head>
@@ -79,7 +79,7 @@
 	  </ul>
 	  </div>
 	</div>
-	<div class='content' style='top: 0; left: 400px'>
+	<!--<div class='content' style='top: 0; left: 400px'>
 	  <div class='innercontent'>
       <h3>Complex only</h3>
       <ul>
@@ -89,7 +89,7 @@
 	    <li id='twofour'>--</li>
 	  </ul>
 	  </div>
-	</div>
+	</div>-->
       </div>
     </body>
 </html>
