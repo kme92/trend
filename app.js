@@ -31,7 +31,6 @@ access_token_secret: 'ZlP7lCaaLBqLzaPX0NlbneiVQ9vYf1LflnDMp4Ev2IGKy'
 });
 
 MongoClient.connect(uristring, function (err, db) { 
-	//console.log(err);
 	
 	db.collection('feed', function (err, collection) {
 		if(err)
@@ -41,7 +40,6 @@ MongoClient.connect(uristring, function (err, db) {
 	
 		collection.drop(function(err, result) {
 			db.createCollection('feed', {'capped':true, 'size':8000000, 'max': 10000}, function(err, collection) {
-			    //assert.ok(collection instanceof Collection);
 			    assert.equal('feed', collection.collectionName);
 		
 			    collection.options(function(err, options) {
@@ -102,13 +100,6 @@ function readAndSend (socket, collection) {
 	    }
 	});
     });
-    /*collection.find({"feedtype":"complex"}, {"tailable": 1, "sort": [["$natural", 1]]}, function(err, cursor) {
-	cursor.intervalEach(900, function(err, item) {
-	    if(item != null) {
-		socket.emit("complex", item); // sends to clients subscribe to type "complex"
-	    }
-	});
-    });*/
 };
 	
 Cursor.prototype.intervalEach = function(interval, callback) {
