@@ -50,18 +50,18 @@ MongoClient.connect(uristring, function (err, db) {
 			    
 				collection.isCapped(function (err, capped) { 
 				    if (err) {
-					console.log ("error getting capped collection");
+					console.log ("err: unable to get capped collection");
 					process.exit(2);
 				    }
 				    if (!capped) {
-					console.log ("uncapped collection");
+					console.log ("err: uncapped collection");
 					process.exit(3);
 				    }
-				    console.log ("success connecting");
+				    console.log ("successful initialization");
 				    twit.stream('user', {track:'obama'}, function(stream) {
 				    var index = 1;
 				    stream.on('data', function(data) {
-				    	console.log(util.inspect(data));
+				    	//console.log(util.inspect(data));
 				    	 db.collection('feed', function(err, collection) {
 				               collection.insert({
 				            	   'index': index,
@@ -96,7 +96,7 @@ function readAndSend (socket, collection) {
     collection.find({}, {"tailable": 1, "sort": [["$natural", 1]]}, function(err, cursor) {
 	cursor.intervalEach(300, function(err, item) { 
 	    if(item != null) {
-		socket.emit("all", item); // sends to clients subscribed to type "all"
+		socket.emit("all", item); // sends to clients subscribed to type all
 	    }
 	});
     });
