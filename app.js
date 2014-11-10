@@ -32,6 +32,82 @@ access_token_secret: 'ZlP7lCaaLBqLzaPX0NlbneiVQ9vYf1LflnDMp4Ev2IGKy'
 
 MongoClient.connect(uristring, function (err, db) { 
 	
+	//volume count aggregation
+	
+	db.collection('volumeCount', function (err, collection) {
+		if(err)
+			{
+			process.exit(1);
+			}
+	
+		// too much nesting??
+		
+		collection.drop(function(err, result) {
+			if (err != null)
+				console.log(err);
+			db.createCollection('volumeCount', function(err, collection) {
+				
+				/*var ob = {};
+			    for(var hour = 0; hour < 24; hour++)
+			    	{
+			    	var hr = hour.toString();
+			    	ob[hr] = {};
+			    	for(var minute = 0; minute < 60; minute++)
+			    		{
+			    		var min = minute.toString();
+			    		ob[hr][min] = {};
+			    		for(var second = 0; second < 60; second++)
+			    			{
+			    			var sec = second.toString();
+			    			ob[hr][min][sec] = 0;
+			    			}
+			    		}
+			    	}*/
+				
+				for(var hour = 0; hour < 24; hour++)
+		    	{
+				var hourOb = {};
+				hourOb["hour"] = hour;
+				hourOb.minutes = new Array();
+				hourOb.hourVolume = 0;
+		    	for(var minute = 0; minute < 60; minute++)
+		    		{
+		    		var minuteOb = {}
+		    		minuteOb["minute"] = minute;
+		    		minuteOb.minuteVolume = 0;
+		    		minuteOb.seconds = new Array();
+		    		hourOb.minutes[minute] = minuteOb;
+		    		for(var second = 0; second < 60; second++)
+		    			{
+		    			var secondOb = {}
+		    			secondOb["second"] = second;
+		    			secondOb.secondVolume = 0;
+		    			minuteOb.seconds[second] = secondOb;
+		    			}
+		    		}
+
+		    	 db.collection('volumeCount', function(err, collection) {
+		               collection.insert(hourOb, {safe:true}, function(err, result)
+		            		   {
+		            	   		// mandatory callback
+		            	       if (err)
+		            			   {throw err;}
+		            	       else
+		            	    	   {
+		            	    	   }
+		            		   });
+		    	 });
+		    	}
+				startVolumeServer(collection);
+							    
+			});
+		});
+    });
+		
+	
+	
+	// feed storage
+	
 	db.collection('feed', function (err, collection) {
 		if(err)
 			{
@@ -62,11 +138,12 @@ MongoClient.connect(uristring, function (err, db) {
 				    var index = 1;
 				    stream.on('data', function(data) {
 				    	//console.log(util.inspect(data));
-				    	 db.collection('feed', function(err, collection) {
+				    	if(data != null && data.text != null){ 
+				    	db.collection('feed', function(err, collection) {
 				               collection.insert({
 				            	   'index': index,
 				            	   'data': data.text, 
-				            	   'date': data.created_at,
+				            	   'date': new Date(data.created_at),
 				            	   'lang': data.lang
 				            	   }, {safe:true}
 				                                 , function(err, result) {
@@ -76,26 +153,88 @@ MongoClient.connect(uristring, function (err, db) {
 				                                		 }
 			                                		 });
 			    	});
+				    }
+				    	 
+				    aggregateVolume(db, data);
 				    });
 				    });
 				
-				    startIOServer (collection);
+				    startFeedServer (collection);
 				}); 
 			});
 		});
     });
+	
 });
 
-function startIOServer (collection) {
+function aggregateVolume(db, data)
+	{
+	var creationDate = new Date(data.created_at);
+	var hour = creationDate.getHours(),
+	minute = creationDate.getMinutes(),
+	second = creationDate.getSeconds();
+	
+	var minuteOb = 
+	db.collection('volumeCount', function (err, collection) {
+		
+		
+		collection.update({"hour": hour, "minutes": {$elemMatch: {"minute": minute}},
+			"minutes.seconds": {$elemMatch: {"second": second}}},
+				    { $inc: {hourVolume: 1, "minutes.$.minuteVolume": 1, "minutes.minuteVolume.seconds.$.second": 1}
+				    	},
+			    {upsert:false,safe:true},
+			    function(err,data){
+			        if (err){
+			            console.log(err);
+			        }
+			        else
+			        	{
+			        	console.log(data);
+			        	}
+			    }
+			);
+	});
+	};
+
+function startVolumeServer (collection) {
     io.sockets.on("connection", function (socket) {
-	readAndSend(socket, collection);
+	readAndSendVolume(socket, collection);
     });
 };
 
-function readAndSend (socket, collection) {
+function readAndSendVolume (socket, collection) {
+	var currentDate = new Date();
+	currentDate = new Date(currentDate.getTime() - 5000); // add a 5 second delay (we do need some time to process data!)
+	var hour = currentDate.getHours(),
+	minute = currentDate.getMinutes(),
+	second = currentDate.getSeconds();
+
+	collection.aggregate([
+	    { $match: {"hour": hour}},
+	    {$unwind: "$minutes"},
+	    {$match: {"minutes.minute": minute}},
+	    {$unwind: "$minutes.seconds"},
+	    {$match: {"minutes.seconds.second": second}}
+	    	], function(err, result) {
+		if (err){
+            console.log(err);
+		}
+    	console.log(util.inspect(result));
+        });
+	
+};
+
+function startFeedServer (collection) {
+    io.sockets.on("connection", function (socket) {
+	readAndSendFeed(socket, collection);
+    });
+};
+
+// example tweets. does not send full volume (sends one every 0.3s)
+function readAndSendFeed (socket, collection) {
     collection.find({}, {"tailable": 1, "sort": [["$natural", 1]]}, function(err, cursor) {
 	cursor.intervalEach(300, function(err, item) { 
-	    if(item != null) {
+	    if(item != null && item.data != null) {
 		socket.emit("all", item); // sends to clients subscribed to type all
 	    }
 	});
@@ -110,7 +249,7 @@ Cursor.prototype.intervalEach = function(interval, callback) {
 
     if(this.state != Cursor.CLOSED) {
 	setTimeout(function(){
-	    // Fetch the next object until there is no more objects
+	    // Fetch the next object until there are no more objects
 	    self.nextObject(function(err, item) {        
 		if(err != null) return callback(err, null);
 
