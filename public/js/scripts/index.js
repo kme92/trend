@@ -109,6 +109,9 @@ function tick() {
 	socket.on('all', function (data) {
 		document.getElementById('console').innerHTML = 'data: ' + JSON.stringify(data, strip_id, 2); 
 	});
+	socket.on('volume', function (data) {
+		document.getElementById('console2').innerHTML = 'data: ' + JSON.stringify(data, strip_id, 2); 
+	});
 
 
 	function pingServer(socket)

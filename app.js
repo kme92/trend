@@ -174,14 +174,20 @@ function aggregateVolume(db, data)
 	minute = creationDate.getMinutes(),
 	second = creationDate.getSeconds();
 	
-	var minuteOb = 
 	db.collection('volumeCount', function (err, collection) {
 		
+		var secondQuery = "minutes." + minute + ".seconds." + second + ".secondVolume";
+		var minuteQuery = "minutes." + minute + ".minuteVolume";
+		var incrementOb = {};
+		incrementOb["hourVolume"] = 1;
+		incrementOb[minuteQuery] = 1;
+		incrementOb[secondQuery] = 1;
+		//console.log(util.inspect(incrementOb));
 		
-		collection.update({"hour": hour, "minutes": {$elemMatch: {"minute": minute}},
-			"minutes.seconds": {$elemMatch: {"second": second}}},
-				    { $inc: {hourVolume: 1, "minutes.$.minuteVolume": 1, "minutes.minuteVolume.seconds.$.second": 1}
-				    	},
+		/*"minutes": {$elemMatch: {"minute": minute}}*/
+		
+		collection.update({"hour": hour},
+				    {$inc: incrementOb},
 			    {upsert:false,safe:true},
 			    function(err,data){
 			        if (err){
@@ -189,7 +195,7 @@ function aggregateVolume(db, data)
 			        }
 			        else
 			        	{
-			        	console.log(data);
+			        	//console.log(util.inspect(data));
 			        	}
 			    }
 			);
@@ -198,7 +204,9 @@ function aggregateVolume(db, data)
 
 function startVolumeServer (collection) {
     io.sockets.on("connection", function (socket) {
-	readAndSendVolume(socket, collection);
+	setInterval(function(){
+		readAndSendVolume(socket, collection);
+		}, 1000);
     });
 };
 
@@ -219,7 +227,11 @@ function readAndSendVolume (socket, collection) {
 		if (err){
             console.log(err);
 		}
-    	console.log(util.inspect(result));
+		else
+			{
+			//console.log(util.inspect(result));
+			socket.emit("volume", result);
+			}
         });
 	
 };
