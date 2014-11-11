@@ -176,15 +176,17 @@ function aggregateVolume(db, data)
 	
 	db.collection('volumeCount', function (err, collection) {
 		
+		// can't use elemMatch due to limitations of MongoDB 
+		// see: https://jira.mongodb.org/browse/SERVER-831
+		//"minutes": {$elemMatch: {"minute": minute}}
+		
+		// MongoDB workaround
 		var secondQuery = "minutes." + minute + ".seconds." + second + ".secondVolume";
 		var minuteQuery = "minutes." + minute + ".minuteVolume";
 		var incrementOb = {};
 		incrementOb["hourVolume"] = 1;
 		incrementOb[minuteQuery] = 1;
 		incrementOb[secondQuery] = 1;
-		//console.log(util.inspect(incrementOb));
-		
-		/*"minutes": {$elemMatch: {"minute": minute}}*/
 		
 		collection.update({"hour": hour},
 				    {$inc: incrementOb},

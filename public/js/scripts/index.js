@@ -1,11 +1,40 @@
+var count = 0;
+
 $(document).ready(function(){
+	
+	var socket = io.connect('/');
+	pingServer(socket); //initial ping - heroku will close connection if no ping within 30s of connection
+	function strip_id(key, value)  { return key == '_id' ? undefined : value; }
+
+		
+	socket.on('all', function (data) {
+		document.getElementById('console').innerHTML = 'data: ' + JSON.stringify(data, strip_id, 2); 
+	});
+	socket.on('volume', function (data) {
+		document.getElementById('console2').innerHTML = 'data: ' + JSON.stringify(data, strip_id, 2);
+		count = data[0].minutes.seconds.secondVolume;
+		tick();
+	});
+
+
+	function pingServer(socket)
+		{
+		//console.log('pinging server at: ' + new Date());
+		socket.emit('ping');
+		}
+
+
+	// ping server every 30s (heroku timeout is 55s)
+	setInterval(function ()
+		{
+		pingServer(socket);
+		}, 30000);	
 
 	(function() {
 	
 	var n = 100,
     duration = 750,
     now = new Date(Date.now() - duration),
-    count = 0,
     data = d3.range(n).map(function() { return 0; });
 
 var margin = {top: 6, right: 0, bottom: 20, left: 0},
@@ -50,8 +79,8 @@ var path = svg.append("g")
 
 tick();
 
-d3.select(window)
-    .on("scroll", function() { ++count; });
+/*d3.select(window)
+    .on("scroll", function() { ++count; });*/
 
 function tick() {
 
@@ -101,30 +130,5 @@ function tick() {
 	}
 	window.onresize = updateWindow;*/
 	
-	var socket = io.connect('/');
-	pingServer(socket); //initial ping - heroku will close connection if no ping within 30s of connection
-	function strip_id(key, value)  { return key == '_id' ? undefined : value; }
-
-		
-	socket.on('all', function (data) {
-		document.getElementById('console').innerHTML = 'data: ' + JSON.stringify(data, strip_id, 2); 
-	});
-	socket.on('volume', function (data) {
-		document.getElementById('console2').innerHTML = 'data: ' + JSON.stringify(data, strip_id, 2); 
-	});
-
-
-	function pingServer(socket)
-		{
-		//console.log('pinging server at: ' + new Date());
-		socket.emit('ping');
-		}
-
-
-	// ping server every 30s (heroku timeout is 55s)
-	setInterval(function ()
-		{
-		pingServer(socket);
-		}, 30000);
 	
 });
