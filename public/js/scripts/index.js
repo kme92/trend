@@ -1,4 +1,5 @@
 var count = 0;
+var yaxisoffset = 20;
 
 $(document).ready(function(){
 	
@@ -11,7 +12,7 @@ $(document).ready(function(){
 		document.getElementById('console').innerHTML = 'feed: ' + JSON.stringify(data, strip_id, 2); 
 	});
 	socket.on('volume', function (data) {
-		document.getElementById('console2').innerHTML = 'volume: ' + JSON.stringify(data, strip_id, 2);
+		document.getElementById('console2').innerHTML = 'volume: ' + JSON.stringify(data[0], strip_id, 2);
 		count = data[0].minutes.seconds.secondVolume;
 	});
 
@@ -35,9 +36,10 @@ $(document).ready(function(){
     duration = 750,
     now = new Date(Date.now() - duration),
     data = d3.range(n).map(function() { return 0; });
-
+	
+	var sidebarWidth = $('#sidebar-container').is(":visible") ? 260 : 0;
 var margin = {top: 6, right: 0, bottom: 20, left: 0},
-    width = $(document).width() - margin.right,
+    width = $(document).width() - sidebarWidth - margin.right,
     height = 100 - margin.top - margin.bottom;
 
 var x = d3.time.scale()
@@ -57,7 +59,7 @@ var svg = d3.select("#dashboard-main-container").append("p").append("svg")
     .attr("height", height + margin.top + margin.bottom)
     .attr("id", "volumeGraph")
   .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(" + yaxisoffset + "," + margin.top + ")");
 
 svg.append("defs").append("clipPath")
     .attr("id", "clip")
@@ -65,10 +67,16 @@ svg.append("defs").append("clipPath")
     .attr("width", width)
     .attr("height", height);
 
-var axis = svg.append("g")
+var xaxis = svg.append("g")
     .attr("class", "x axis")
     .attr("transform", "translate(0," + height + ")")
     .call(x.axis = d3.svg.axis().scale(x).orient("bottom"));
+
+// currently using .y.axis g:first-child workaround in index.css to hide first tick
+var yaxis = svg.append("g")
+	.attr("class", "y axis")
+	/*.attr("transform", "translate(" + yaxisoffset + ",0)")*/
+	.call(y.axis = d3.svg.axis().scale(y).ticks(5).orient("left"));
 
 var path = svg.append("g")
     .attr("clip-path", "url(#clip)")
@@ -87,7 +95,7 @@ function tick() {
 
 	  // push the accumulated count onto the back, and reset the count
 	  data.push(count);
-	  count = 0;
+	  //count = 0;
 
 	  // redraw the line
 	  svg.select(".line")
@@ -95,10 +103,17 @@ function tick() {
 	      .attr("transform", null);
 
 	  // slide the x-axis left
-	  axis.transition()
+	  xaxis.transition()
 	      .duration(duration)
 	      .ease("linear")
 	      .call(x.axis);
+	  
+	  
+	  // update the y-axis
+	  yaxis.transition()
+      .duration(duration)
+      .ease("linear")
+      .call(y.axis);
 
 	  // slide the line left
 	  path.transition()
@@ -112,20 +127,6 @@ function tick() {
 
 	}
 
-})();
-	
-	/*TODO: dynamic resizing of d3 graph*/
-	/*function updateWindow(){
-		w = window,
-	    d = document,
-	    e = d.documentElement,
-	    g = d.getElementsByTagName('body')[0],
-	    x = w.innerWidth || e.clientWidth || g.clientWidth;
-	    y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-
-	    $('.svg').attr("width", x).attr("height", y);
-	}
-	window.onresize = updateWindow;*/
-	
+})();	
 	
 });

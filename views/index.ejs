@@ -27,9 +27,19 @@
 					<div class="navbar-header">
 				<a class="navbar-brand" href="/">
 						<p class="brand">trend</p>
-</a>				
-</div>
+				</a>				
+		</div>
 	</header>
+	<footer id="footer">
+		<div class="wrapper">
+	
+		<ul id="footer-nav">
+		<li><p id="copyright">© 2014 Kevin Me</p></li>
+		<li><a href="http://inertance.herokuapp.com/" target="_blank" rel="nofollow">about me</a></li>
+		</ul>
+		</div>
+	</footer>
+
 </div>
 <div id="dashboard-main-container" class="container-fluid">
 <header class="header" role="banner">
@@ -39,15 +49,28 @@
 						<p class="brand">trend</p>
 </a>				
 </div>
+<div id="tracking-input-container" style="
+    color: #CCC;
+    top: 13px;
+    position: relative;
+"><i class="fa fa-twitter fa-2x"></i><input type="text" placeholder="enter a word or phrase to track..." style="
+    border: none;
+    background: none;
+    width: 300px;
+    margin-left: 15px;
+    vertical-align: middle;
+    margin-bottom: 15px;
+    outline: none;
+"></div>
 <ul class="nav navbar-nav navbar-right">
-        <li id="li-user"><p><span style="color:#CCC;">currently tracking</span> "obama"</p></li> <!--TODO: Update tag id-->
+        <li id="li-user"><p><span style="color:#9696A7;">currently tracking</span> "obama"</p></li> <!--TODO: Update tag id-->
         <!--<li id="li-logout">
         	<a id="logout" href="/logout"><span class="glyphicon glyphicon-log-out"></span></a>
         </li>-->
       </ul>
 </div>
 </header>
-<div class="container" style="top: 50px; position: relative;">
+<div id="main-content-container" class="container">
 	<div class="content">
 	    <div><pre id="console"></pre></div>
 	</div>
