@@ -1,9 +1,21 @@
 @media only screen 
 and (min-width : 768px) {
 /* full size */
-#li-user {
+#li-user, #sidebar-container {
 	display: block !important;
 }
+
+	#main-header-brand {
+		display: none !important;
+	}
+}
+
+@media only screen
+and (max-width : 767px) {
+		#dashboard-main-container {
+	left: 0px !important;
+	width: 100% !important;
+	}
 }
 
 body {
@@ -11,8 +23,16 @@ body {
 }
 
 header {
-	background: #1b1b24;
+	/*background: #1b1b24;*/
+	height: 52px;
 	border-bottom: 2px solid white;
+}
+
+.sidebar-header {
+	/*height:52px;*/
+	/*border-bottom: 2px solid #1b1b24;*/
+	margin-right: 15px;
+	margin-left: 15px;
 }
 
 .navbar-header {
@@ -60,9 +80,11 @@ padding-right: 30px;
 
 #li-user {
 	display: none;
+	right: 30px;
+	position: absolute;
 }
 
-#brand {
+.brand {
 	padding-top: 15px;
 padding-bottom: 15px;
 line-height: 20px;
@@ -71,7 +93,6 @@ color: white;
 padding-right: 30px;
 font-weight: bold;
 font-size: 20pt;
-padding-left:30px;
 }
 
 
@@ -101,4 +122,27 @@ svg {
 	bottom: 0px;
 	right: 0px;
 	border-top: 1px solid white;
+}
+
+#sidebar-container {
+	height: 100%;
+	width: 260px;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	display: none;
+	color: white;
+	position: absolute;
+	z-index: 1001;
+	border-right: 2px solid white;
+	
+}
+
+#dashboard-main-container {
+	overflow-x: hidden;
+	height: 100%;
+	position: absolute;
+	left: 260px;
+	z-index: 1002;
+	width: calc(100% - 260px);
 }

@@ -8,12 +8,11 @@ $(document).ready(function(){
 
 		
 	socket.on('all', function (data) {
-		document.getElementById('console').innerHTML = 'data: ' + JSON.stringify(data, strip_id, 2); 
+		document.getElementById('console').innerHTML = 'feed: ' + JSON.stringify(data, strip_id, 2); 
 	});
 	socket.on('volume', function (data) {
-		document.getElementById('console2').innerHTML = 'data: ' + JSON.stringify(data, strip_id, 2);
+		document.getElementById('console2').innerHTML = 'volume: ' + JSON.stringify(data, strip_id, 2);
 		count = data[0].minutes.seconds.secondVolume;
-		tick();
 	});
 
 
@@ -53,7 +52,7 @@ var line = d3.svg.line()
     .x(function(d, i) { return x(now - (n - 1 - i) * duration); })
     .y(function(d, i) { return y(d); });
 
-var svg = d3.select("body").append("p").append("svg")
+var svg = d3.select("#dashboard-main-container").append("p").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .attr("id", "volumeGraph")
@@ -79,45 +78,43 @@ var path = svg.append("g")
 
 tick();
 
-/*d3.select(window)
-    .on("scroll", function() { ++count; });*/
-
 function tick() {
 
-  // update the domains
-  now = new Date();
-  x.domain([now - (n - 2) * duration, now - duration]);
-  y.domain([0, d3.max(data)]);
+	  // update the domains
+	  now = new Date();
+	  x.domain([now - (n - 2) * duration, now - duration]);
+	  y.domain([0, d3.max(data)]);
 
-  // push the accumulated count onto the back, and reset the count
-  data.push(count);
-  count = 0;
+	  // push the accumulated count onto the back, and reset the count
+	  data.push(count);
+	  count = 0;
 
-  // redraw the line
-  svg.select(".line")
-      .attr("d", line)
-      .attr("transform", null);
+	  // redraw the line
+	  svg.select(".line")
+	      .attr("d", line)
+	      .attr("transform", null);
 
-  // slide the x-axis left
-  axis.transition()
-      .duration(duration)
-      .ease("linear")
-      .call(x.axis);
+	  // slide the x-axis left
+	  axis.transition()
+	      .duration(duration)
+	      .ease("linear")
+	      .call(x.axis);
 
-  // slide the line left
-  path.transition()
-      .duration(duration)
-      .ease("linear")
-      .attr("transform", "translate(" + x(now - (n - 1) * duration) + ")")
-      .each("end", tick);
+	  // slide the line left
+	  path.transition()
+	      .duration(duration)
+	      .ease("linear")
+	      .attr("transform", "translate(" + x(now - (n - 1) * duration) + ")")
+	      .each("end", tick);
 
-  // pop the old data point off the front
-  data.shift();
+	  // pop the old data point off the front
+	  data.shift();
 
-}
+	}
 
 })();
 	
+	/*TODO: dynamic resizing of d3 graph*/
 	/*function updateWindow(){
 		w = window,
 	    d = document,
