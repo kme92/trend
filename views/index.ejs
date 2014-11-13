@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="/css/index.css">
 	<script src='/socket.io/socket.io.js'></script> 
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<!--<script type="text/javascript" src="/js/angular.min.js"></script>
 	<script type="text/javascript" src="/js/angular-route.min.js"></script>
 	<script type="text/javascript" src="/js/angular-animate.min.js"></script>-->
@@ -35,7 +36,11 @@
 	
 		<ul id="footer-nav">
 		<li><p id="copyright">© 2014 Kevin Me</p></li>
-		<li><a href="http://inertance.herokuapp.com/" target="_blank" rel="nofollow">about me</a></li>
+		<li><a href="http://inertance.herokuapp.com/" target="_blank" rel="nofollow">about me<i class="fa fa-external-link" style="
+    padding-left: 5px;
+    position: relative;
+    /* top: 1px; */
+"></i></a></li>
 		</ul>
 		</div>
 	</footer>
@@ -49,11 +54,11 @@
 						<p class="brand">trend</p>
 </a>				
 </div>
-<div id="tracking-input-container" style="
+<form id="tracking-form" method="post" action="/" style="
     color: #CCC;
     top: 13px;
     position: relative;
-"><i class="fa fa-twitter fa-2x"></i><input type="text" placeholder="enter a word or phrase to track..." style="
+"><i class="fa fa-twitter fa-2x"></i><input id="tracking-input" type="text" placeholder="enter a word or phrase to track..." style="
     border: none;
     background: none;
     width: 300px;
@@ -61,7 +66,7 @@
     vertical-align: middle;
     margin-bottom: 15px;
     outline: none;
-"></div>
+"></form>
 <ul class="nav navbar-nav navbar-right">
         <li id="li-user"><p><span style="color:#9696A7;">currently tracking</span> "obama"</p></li> <!--TODO: Update tag id-->
         <!--<li id="li-logout">
@@ -77,6 +82,26 @@
 		<div class="content">
 	    <div><pre id="console2"></pre></div>
 	</div>
+</div>
+<div id="volume-graph-container">
+	<span><p style="
+    color: white;
+    position: absolute;
+    top: 1px;
+    left: 10px;
+    font-size:12px;
+    font-weight: bold;
+">volume</p><div id="granularity-dropdown-container" class="dropdown">
+  <button class="btn btn-default btn-xs dropdown-toggle" type="button" id="granularity-dropdown" data-toggle="dropdown" aria-expanded="true">
+    per second
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="granularity-dropdown">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-granularity="seconds" onclick="setGranularity(this);">per second</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-granularity="minutes" onclick="setGranularity(this);">this minute</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-granularity="hours" onclick="setGranularity(this);">this hour</a></li>
+  </ul>
+</div></span>
 </div>
 </div>
 </div>

@@ -13,13 +13,13 @@ and (min-width : 768px) {
 @media only screen 
 and (min-width : 480px) {
 /* landscape */
-	#tracking-input-container {
+	#tracking-form {
 	display: block !important;
 }
 
 }
 
-#tracking-input-container {
+#tracking-form {
 	display: none;
 }
 
@@ -167,8 +167,8 @@ svg {
 	position: absolute;
 	width: 100%; 
     border: none; 
-    padding-top: 15px;
-    padding-bottom: 15px; 
+    padding-top: 5px;
+    padding-bottom: 5px; 
     padding-left: 15px; 
     padding-right: 0px; 
     text-align: center;
@@ -217,11 +217,35 @@ svg {
 
 #main-content-container {
 	top: 70px;
-bottom: 120px;
+bottom: 127px;
 position: absolute;
 overflow-y: scroll;
 width: 100%;
 padding-left: 0px;
 }
 
+#tracking-input:focus {
+	color:white;
+}
 
+#volume-graph-container {
+	bottom: 0px;
+	position:absolute;
+	width: 100%;
+	height: 125px;
+	right: 0px;
+}
+
+#granularity-dropdown-container {
+	left: 60px;
+}
+	#granularity-dropdown-container ul {
+		font-size: 12px;
+line-height: 1.5;
+border-radius: 3px;
+	}
+
+#granularity-dropdown {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}

@@ -247,7 +247,7 @@ function startFeedServer (collection) {
 // example tweets. does not send full volume (sends one every 0.3s)
 function readAndSendFeed (socket, collection) {
     collection.find({}, {"tailable": 1, "sort": [["$natural", 1]]}, function(err, cursor) {
-	cursor.intervalEach(300, function(err, item) { 
+	cursor.intervalEach(1000, function(err, item) { 
 	    if(item != null && item.data != null) {
 		socket.emit("all", item); // sends to clients subscribed to type all
 	    }
