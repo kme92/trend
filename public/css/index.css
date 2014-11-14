@@ -11,14 +11,6 @@ and (min-width : 768px) {
 }
 
 @media only screen 
-and (max-width : 900px) {
-	#language-granularity {
-	padding-left: 0px;
-}
-
-}
-
-@media only screen 
 and (min-width : 480px) {
 /* landscape */
 	#tracking-form {
@@ -258,18 +250,22 @@ border-radius: 3px;
 	padding-bottom: 0px;
 }
 
-#language-graph-container {
-	display: table;
-table-layout: fixed;
-}
-
 #language-granularity {
 	list-style-type: none;
 color: white;
 vertical-align: middle;
 text-align: left;
 position: relative;
-display: table-cell;
+float: left;
+top: 95px;
+
+}
+
+#language-graph-sizing-container {
+	width: 400px;
+left: 50%;
+position: relative;
+margin-left: -200px;
 }
 
 	#language-granularity span {
