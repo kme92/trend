@@ -80,7 +80,24 @@
 		<div class="row">
                 <div id="language-graph-container" class="col-lg-6 col-sm-6">
                 	<div id="language-graph-sizing-container">
-                	<ul id="language-granularity"></ul>
+                	<span><p style="
+    color: white;
+    position: absolute;
+    top: 1px;
+    left: 40px;
+    font-size:12px;
+    font-weight: bold;
+">language distribution</p><div id="language-granularity-dropdown-container" class="dropdown">
+					  <button class="btn btn-default btn-xs dropdown-toggle" type="button" id="language-granularity-dropdown" data-toggle="dropdown" aria-expanded="true">
+					    per second
+					    <span class="caret"></span>
+					  </button>
+					  <ul id="language-dropdown" class="dropdown-menu" role="menu" aria-labelledby="language-granularity-dropdown">
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-granularity="seconds" onclick="setLanguageGranularity(this);">this second</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-granularity="minutes" onclick="setLanguageGranularity(this);">this minute</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-granularity="hours" onclick="setLanguageGranularity(this);">this hour</a></li>
+					  </ul>
+					</div>
                		<div id="languageGraph"></div>
                		</div>
                 </div>
@@ -103,15 +120,15 @@
     left: 10px;
     font-size:12px;
     font-weight: bold;
-">volume</p><div id="granularity-dropdown-container" class="dropdown">
-  <button class="btn btn-default btn-xs dropdown-toggle" type="button" id="granularity-dropdown" data-toggle="dropdown" aria-expanded="true">
+">volume</p><div id="volume-granularity-dropdown-container" class="dropdown">
+  <button class="btn btn-default btn-xs dropdown-toggle" type="button" id="volume-granularity-dropdown" data-toggle="dropdown" aria-expanded="true">
     per second
     <span class="caret"></span>
   </button>
-  <ul class="dropdown-menu" role="menu" aria-labelledby="granularity-dropdown">
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-granularity="seconds" onclick="setGranularity(this);">per second</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-granularity="minutes" onclick="setGranularity(this);">this minute</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-granularity="hours" onclick="setGranularity(this);">this hour</a></li>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="volume-granularity-dropdown">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-granularity="seconds" onclick="setVolumeGranularity(this);">per second</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-granularity="minutes" onclick="setVolumeGranularity(this);">this minute</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-granularity="hours" onclick="setVolumeGranularity(this);">this hour</a></li>
   </ul>
 </div></span>
 </div>

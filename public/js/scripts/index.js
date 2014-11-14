@@ -1,22 +1,23 @@
 var count = 0;
 var yaxisoffset = 40;
+var languageGranularity = 'seconds';
 var granularity = 'seconds';
 var resizeCount = 0;
-var languageData = [{"granularity": "second", "lang":"en","count":1},
-      	          {"granularity": "second", "lang":"in","count":3},
-      	          {"granularity": "second", "lang":"jp","count":7},
-      	          {"granularity": "second", "lang":"cn","count":4},
-      	          {"granularity": "second", "lang":"fr","count":2},
-      	          {"granularity": "minute", "lang":"en","count":27},
-      	          {"granularity": "minute", "lang":"in","count":21},
-      	          {"granularity": "minute", "lang":"jp","count":45},
-      	          {"granularity": "minute", "lang":"cn","count":61},
-      	          {"granularity": "minute", "lang":"fr","count":22},
-      	          {"granularity": "hour", "lang":"en","count":540},
-      	          {"granularity": "hour", "lang":"in","count":258},
-      	          {"granularity": "hour", "lang":"jp","count":612},
-      	          {"granularity": "hour", "lang":"cn","count":300},
-      	          {"granularity": "hour", "lang":"fr","count":120}];
+var languageData = [{"granularity": "seconds", "lang":"en","count":1},
+      	          {"granularity": "seconds", "lang":"in","count":3},
+      	          {"granularity": "seconds", "lang":"jp","count":7},
+      	          {"granularity": "seconds", "lang":"cn","count":4},
+      	          {"granularity": "seconds", "lang":"fr","count":2},
+      	          {"granularity": "minutes", "lang":"en","count":27},
+      	          {"granularity": "minutes", "lang":"in","count":21},
+      	          {"granularity": "minutes", "lang":"jp","count":45},
+      	          {"granularity": "minutes", "lang":"cn","count":61},
+      	          {"granularity": "minutes", "lang":"fr","count":22},
+      	          {"granularity": "hours", "lang":"en","count":540},
+      	          {"granularity": "hours", "lang":"in","count":258},
+      	          {"granularity": "hours", "lang":"jp","count":612},
+      	          {"granularity": "hours", "lang":"cn","count":300},
+      	          {"granularity": "hours", "lang":"fr","count":120}];
 
 $(document).ready(function(){
 	
@@ -179,13 +180,24 @@ $(window).resize(function(){
 	renderVolumeGraph();
 });
 
-function setGranularity(elm) {
+function setVolumeGranularity(elm) {
 	var elmGranularity = $(elm).data("granularity");
 	if(granularity != elmGranularity)
 		{
 		granularity = elmGranularity;
-		$('#granularity-dropdown').html(elm.innerHTML + ' <span class="caret"></span>');
+		$('#volume-granularity-dropdown').html(elm.innerHTML + ' <span class="caret"></span>');
 		renderVolumeGraph();
+		}
+	
+}
+
+function setLanguageGranularity(elm) {
+	var elmGranularity = $(elm).data("granularity");
+	if(languageGranularity != elmGranularity)
+		{
+		languageGranularity = elmGranularity;
+		$('#language-granularity-dropdown').html(elm.innerHTML + ' <span class="caret"></span>');
+		$("#languageGraph:checkbox[value=" + languageGranularity + "]").prop("checked","true");
 		}
 	
 }
@@ -214,17 +226,16 @@ var svg = d3.select("#languageGraph").append("svg")
 
 var path = svg.selectAll("path");
 
-/*d3.tsv("data.tsv", type, function(error, demodata) {*/
   var languagesByGranularity = d3.nest()
       .key(function(d) { return d.granularity; })
       .entries(languageData)
       .reverse();
 
-  var label = d3.select("#language-granularity").selectAll("li")
-      .data(languagesByGranularity)
-    .enter().append("li");
+ var li = d3.select("#language-dropdown").selectAll("li");
+      li.data(languagesByGranularity)
+    .enter().append("li").on("click", change);
 
-  label.append("input")
+ /* label.append("input")
       .attr("type", "radio")
       .attr("name", "granularity")
       .attr("value", function(d) { return d.key; })
@@ -234,8 +245,11 @@ var path = svg.selectAll("path");
       .property("checked", true);
   
   label.append("span")
-  .text(function(d) { return "this " + d.key; });
+  .text(function(d) { return "this " + d.key; });*/
+ d3.select("#language-dropdown").selectAll("li").on("click", change);
 
+ change(li.data()[0]);
+ 
   function change(lang) {
     var data0 = path.data(),
         data1 = pie(lang.values);

@@ -236,16 +236,16 @@ padding-left: 0px;
 	right: 0px;
 }
 
-#granularity-dropdown-container {
+#volume-granularity-dropdown-container {
 	left: 60px;
 }
-	#granularity-dropdown-container ul {
+	#volume-granularity-dropdown-container ul {
 		font-size: 12px;
 line-height: 1.5;
 border-radius: 3px;
 	}
 
-#granularity-dropdown {
+#volume-granularity-dropdown {
 	padding-top: 0px;
 	padding-bottom: 0px;
 }
@@ -262,12 +262,28 @@ top: 95px;
 }
 
 #language-graph-sizing-container {
-	width: 400px;
+	width: 300px;
+	height:320px;
 left: 50%;
 position: relative;
-margin-left: -200px;
+margin-left: -150px;
 }
 
 	#language-granularity span {
 		padding-left:5px;
 	}
+	
+#language-granularity-dropdown-container {
+	left: 60px;
+	padding-bottom: 5px;
+}
+
+	#language-granularity-dropdown-container ul {
+		font-size: 12px;
+line-height: 1.5;
+border-radius: 3px;
+	}
+	
+/*#languageGraph > li {
+	display:none;
+}*/
