@@ -84,7 +84,7 @@
     color: white;
     position: absolute;
     top: 1px;
-    left: 40px;
+    left: 18px;
     font-size:12px;
     font-weight: bold;
 ">language distribution</p><div id="language-granularity-dropdown-container" class="dropdown">
@@ -105,21 +105,19 @@
                 </div>
             </div>
 	</div>
-	<div class="content">
-	    <div><pre id="console"></pre></div>
-	</div>
-		<div class="content">
-	    <div><pre id="console2"></pre></div>
-	</div>
-</div>
-<div id="volume-graph-container">
-	<span><p style="
+	<div id="volume-graph-section-container" class="container">
+	<div id="volume-graph-container">
+	<span style="margin: 0 auto;
+width: 160px;
+display: inline-block;"><p style="
     color: white;
-    position: absolute;
     top: 1px;
     left: 10px;
     font-size:12px;
     font-weight: bold;
+    float: left;
+    padding-left: 10px;
+    padding-right: 5px;
 ">volume</p><div id="volume-granularity-dropdown-container" class="dropdown">
   <button class="btn btn-default btn-xs dropdown-toggle" type="button" id="volume-granularity-dropdown" data-toggle="dropdown" aria-expanded="true">
     per second
@@ -131,6 +129,14 @@
     <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-granularity="hours" onclick="setVolumeGranularity(this);">this hour</a></li>
   </ul>
 </div></span>
+</div>
+</div>
+	<div class="content">
+	    <div><pre id="console"></pre></div>
+	</div>
+		<div class="content">
+	    <div><pre id="console2"></pre></div>
+	</div>
 </div>
 </div>
 </div>

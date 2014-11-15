@@ -73,9 +73,9 @@ function renderVolumeGraph() {
     data = d3.range(n).map(function() { return 0; });
 	now.setSeconds(now.getSeconds() - 5);
 	
-	var sidebarWidth = $('#sidebar-container').is(":visible") ? 260 : 0;
+	//var sidebarWidth = $('#sidebar-container').is(":visible") ? 260 : 0;
 var margin = {top: 6, right: 0, bottom: 20, left: 0},
-    width = $(document).width() - sidebarWidth - margin.right,
+    width = $('#main-content-container').width() /*- sidebarWidth*/ - margin.right,
     height = 100 - margin.top - margin.bottom;
 
 var x = d3.time.scale()
