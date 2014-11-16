@@ -144,7 +144,8 @@ MongoClient.connect(uristring, function (err, db) {
 				            	   'index': index,
 				            	   'data': data.text, 
 				            	   'date': new Date(data.created_at),
-				            	   'lang': data.lang
+				            	   'lang': data.lang,
+				            	   'source': data.source
 				            	   }, {safe:true}
 				                                 , function(err, result) {
 				                                	 if(err==null)
