@@ -43,7 +43,7 @@ header {
 
 .sidebar-header {
 	/*height:52px;*/
-	/*border-bottom: 2px solid #1b1b24;*/
+	/*border-bottom: 2x solid #1b1b24;*/
 	margin-right: 15px;
 	margin-left: 15px;
 }
@@ -147,7 +147,7 @@ svg {
 	bottom: 0;
 	display: none;
 	color: white;
-	position: absolute;
+	position: fixed;
 	z-index: 1001;
 	border-right: 2px solid white;
 	
@@ -155,7 +155,7 @@ svg {
 
 #dashboard-main-container {
 	overflow-x: hidden;
-	height: 100%;
+	/*height: 100%;*/
 	position: absolute;
 	left: 260px;
 	z-index: 1002;
@@ -216,7 +216,7 @@ svg {
 }
 
 #main-content-container {
-	top: 20px;
+padding-top: 20px;
 bottom: 0px;
 position: relative;
 width: 100%;
