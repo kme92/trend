@@ -1,4 +1,4 @@
-A real-time twitter analytics app.
+A real-time Twitter analytics app.
 
 This application consumes the Twitter Public Streaming API and aggregates the data in real-time, down to the second.
 

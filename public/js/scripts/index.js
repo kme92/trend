@@ -3,6 +3,7 @@ var yaxisoffset = 40;
 var languageGranularity = 'seconds';
 var granularity = 'seconds';
 var resizeCount = 0;
+var sourceVolumeData = [{"source": "<temp>loading", "count": 1}];
 var languageData = [{"granularity": "seconds", "lang":"en","count":1},
       	          {"granularity": "seconds", "lang":"in","count":3},
       	          {"granularity": "seconds", "lang":"jp","count":7},
@@ -30,7 +31,7 @@ $(document).ready(function(){
 		document.getElementById('console').innerHTML = 'feed: ' + JSON.stringify(data, strip_id, 2); 
 	});
 	socket.on('volume', function (data) {
-		document.getElementById('console2').innerHTML = 'volume: ' + JSON.stringify(data[0], strip_id, 2);
+		document.getElementById('console2').innerHTML = 'total volume: ' + JSON.stringify(data[0], strip_id, 2);
 		if(granularity == 'hours')
 			{
 			count = data[0].hourVolume;
@@ -44,7 +45,104 @@ $(document).ready(function(){
 			count = data[0].minutes.seconds.secondVolume;
 			}
 	});
+	
+	
+	// source volume
+	
+	// bar graph
+	//$(document).ready(function(){
 
+	function renderChart() {
+		$('#source-graph svg').remove();
+		var data = sourceVolumeData;
+		var valueLabelWidth = 40; // space reserved for value labels (right)
+		var barHeight = 20; // height of one bar
+		var barLabelWidth = 100; // space reserved for bar labels
+		var barLabelPadding = 5; // padding between bar and bar labels (left)
+		var gridLabelHeight = 18; // space reserved for gridline labels
+		var gridChartOffset = 3; // space between start of grid and first bar
+		var maxBarWidth = 420; // width of the bar with the max value
+		 
+		// accessor functions 
+		var barLabel = function(d) { return d['source']; };
+		var barValue = function(d) { return parseFloat(d['count']); };
+		 
+		// sorting
+		var sortedData = data.sort(function(a, b) {
+		 return d3.descending(barValue(a), barValue(b));
+		}); 
+
+		// scales
+		var yScale = d3.scale.ordinal().domain(d3.range(0, sortedData.length)).rangeBands([0, sortedData.length * barHeight]);
+		var y = function(d, i) { return yScale(i); };
+		var yText = function(d, i) { return y(d, i) + yScale.rangeBand() / 2; };
+		var x = d3.scale.linear().domain([0, d3.max(sortedData, barValue)]).range([0, maxBarWidth]);
+		// svg container element
+		var chart = d3.select('#source-graph').append("svg")
+		  .attr('width', maxBarWidth + barLabelWidth + valueLabelWidth)
+		  .attr('height', gridLabelHeight + gridChartOffset + sortedData.length * barHeight);
+		// grid line labels
+		var gridContainer = chart.append('g')
+		  .attr('transform', 'translate(' + barLabelWidth + ',' + gridLabelHeight + ')'); 
+		gridContainer.selectAll("text").data(x.ticks(10)).enter().append("text")
+		  .attr("x", x)
+		  .attr("dy", -3)
+		  .attr("text-anchor", "middle")
+		  .attr('fill', 'white')
+		  .text(String);
+		// vertical grid lines
+		gridContainer.selectAll("line").data(x.ticks(10)).enter().append("line")
+		  .attr("x1", x)
+		  .attr("x2", x)
+		  .attr("y1", 0)
+		  .attr("y2", yScale.rangeExtent()[1] + gridChartOffset)
+		  .style("stroke", "#ccc");
+		// bar labels
+		var labelsContainer = chart.append('g')
+		  .attr('transform', 'translate(' + (barLabelWidth - barLabelPadding) + ',' + (gridLabelHeight + gridChartOffset) + ')'); 
+		labelsContainer.selectAll('text').data(sortedData).enter().append('text')
+		  .attr('y', yText)
+		  .attr('stroke', 'none')
+		  .attr('fill', 'white')
+		  .attr("dy", ".35em") // vertical-align: middle
+		  .attr('text-anchor', 'end')
+		  .text(barLabel);
+		// bars
+		var barsContainer = chart.append('g')
+		  .attr('transform', 'translate(' + barLabelWidth + ',' + (gridLabelHeight + gridChartOffset) + ')'); 
+		barsContainer.selectAll("rect").data(sortedData).enter().append("rect")
+		  .attr('y', y)
+		  .attr('height', yScale.rangeBand())
+		  .attr('width', function(d) { return x(barValue(d)); })
+		  .attr('stroke', '#1b1b24')
+		  .attr('fill', 'steelblue');
+		// bar value labels
+		barsContainer.selectAll("text").data(sortedData).enter().append("text")
+		  .attr("x", function(d) { return x(barValue(d)); })
+		  .attr("y", yText)
+		  .attr("dx", 3) // padding-left
+		  .attr("dy", ".35em") // vertical-align: middle
+		  .attr("text-anchor", "start") // text-align: right
+		  .attr("fill", "white")
+		  .attr("stroke", "none")
+		  .text(function(d) { return d3.round(barValue(d), 2); });
+		// start line
+		barsContainer.append("line")
+		  .attr("y1", -gridChartOffset)
+		  .attr("y2", yScale.rangeExtent()[1] + gridChartOffset)
+		  .style("stroke", "#000");
+
+		}
+		renderChart();
+		
+	//});
+	
+	socket.on('sourceVolume', function (data) {
+		console.log(data);
+		sourceVolumeData = data;
+		document.getElementById('console3').innerHTML = 'volume by source: ' + JSON.stringify(data, strip_id, 2);
+		renderChart();
+	});
 
 	function pingServer(socket)
 		{
@@ -235,17 +333,6 @@ var path = svg.selectAll("path");
       li.data(languagesByGranularity)
     .enter().append("li").on("click", change);
 
- /* label.append("input")
-      .attr("type", "radio")
-      .attr("name", "granularity")
-      .attr("value", function(d) { return d.key; })
-      .on("change", change)
-    .filter(function(d, i) { return !i; })
-      .each(change)
-      .property("checked", true);
-  
-  label.append("span")
-  .text(function(d) { return "this " + d.key; });*/
  d3.select("#language-dropdown").selectAll("li").on("click", change);
 
  change(li.data()[0]);

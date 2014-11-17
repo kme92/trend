@@ -32,6 +32,30 @@ access_token_secret: 'ZlP7lCaaLBqLzaPX0NlbneiVQ9vYf1LflnDMp4Ev2IGKy'
 
 MongoClient.connect(uristring, function (err, db) { 
 	
+	//volume by source aggregation
+	
+	db.collection('sourceVolumeCount', function (err, collection) {
+		if(err)
+			{
+			process.exit(1);
+			}
+		
+		collection.drop(function(err, result) {
+			if (err != null)
+				console.log(err);
+			db.createCollection('sourceVolumeCount', function(err, collection) {
+				if(err)
+					{
+					console.log(err);
+					}
+				
+				startSourceVolumeServer(collection);
+							    
+			});
+		});
+    });
+	
+	
 	//volume count aggregation
 	
 	db.collection('volumeCount', function (err, collection) {
@@ -46,23 +70,6 @@ MongoClient.connect(uristring, function (err, db) {
 			if (err != null)
 				console.log(err);
 			db.createCollection('volumeCount', function(err, collection) {
-				
-				/*var ob = {};
-			    for(var hour = 0; hour < 24; hour++)
-			    	{
-			    	var hr = hour.toString();
-			    	ob[hr] = {};
-			    	for(var minute = 0; minute < 60; minute++)
-			    		{
-			    		var min = minute.toString();
-			    		ob[hr][min] = {};
-			    		for(var second = 0; second < 60; second++)
-			    			{
-			    			var sec = second.toString();
-			    			ob[hr][min][sec] = 0;
-			    			}
-			    		}
-			    	}*/
 				
 				for(var hour = 0; hour < 24; hour++)
 		    	{
@@ -137,8 +144,8 @@ MongoClient.connect(uristring, function (err, db) {
 				    twit.stream('user', {track:'obama'}, function(stream) {
 				    var index = 1;
 				    stream.on('data', function(data) {
-				    	//console.log(util.inspect(data));
-				    	if(data != null && data.text != null){ 
+				    	if(data != null && data.source != undefined  && data.text != undefined){ 
+				    		data.source = data.source.replace(/<(?:.|\n)*?>/gm, '');
 				    	db.collection('feed', function(err, collection) {
 				               collection.insert({
 				            	   'index': index,
@@ -157,6 +164,7 @@ MongoClient.connect(uristring, function (err, db) {
 				    }
 				    	 
 				    aggregateVolume(db, data);
+				    aggregateSourceVolume(db, data);
 				    });
 				    });
 				
@@ -236,6 +244,45 @@ function readAndSendVolume (socket, collection) {
 			socket.emit("volume", result);
 			}
         });
+	
+};
+
+function aggregateSourceVolume(db, data)
+{
+var source = data.source;
+if(source != null){
+db.collection('sourceVolumeCount', function (err, collection) {
+	
+	collection.update({"source": source},
+			    {$inc: {"count": 1}},
+		    {upsert:true,safe:true},
+		    function(err,data){
+		        if (err){
+		            console.log(err);
+		        }
+		        else
+		        	{
+		        	//console.log(util.inspect(data));
+		        	}
+		    }
+		);
+});
+}
+};
+
+function startSourceVolumeServer (collection) {
+    io.sockets.on("connection", function (socket) {
+	setInterval(function(){
+		readAndSendSourceVolume(socket, collection);
+		}, 5000);
+    });
+};
+
+function readAndSendSourceVolume (socket, collection) {
+    collection.find({}, {"limit": 10, "sort": [["count", -1]]}).toArray(function(err, docs)
+    		{
+    		socket.emit("sourceVolume", docs);
+    		});
 	
 };
 
