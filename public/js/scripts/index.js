@@ -293,6 +293,7 @@ function arcTween(d) {
 			.done(function(data){
 				console.log(data);
 				$('#tracker').text('"' + data + '"');
+				document.title = "trend | " + data;
 			});
 	});
 });
