@@ -162,31 +162,20 @@ function arcTween(d) {
   this._current = i(0);
   return function(t) { return arc(i(t)); };
 }
-//});
-	
-	
-	/*socket.on('languageVolume', function (data) {
-		//console.log(data);
-		languageVolumeData = data;
-		document.getElementById('console4').innerHTML = 'volume by language: ' + JSON.stringify(data, strip_id, 2);
-		//renderChart();
-	});*/
 	
 	// source volume
 	
-	// bar graph
-	//$(document).ready(function(){
 
 	function renderChart() {
 		$('#source-graph svg').remove();
 		var data = sourceVolumeData;
 		var valueLabelWidth = 40; // space reserved for value labels (right)
 		var barHeight = 20; // height of one bar
-		var barLabelWidth = 100; // space reserved for bar labels
+		var barLabelWidth = 125; // space reserved for bar labels
 		var barLabelPadding = 5; // padding between bar and bar labels (left)
 		var gridLabelHeight = 18; // space reserved for gridline labels
 		var gridChartOffset = 3; // space between start of grid and first bar
-		var maxBarWidth = 420; // width of the bar with the max value
+		var maxBarWidth = 400; // width of the bar with the max value
 		 
 		// accessor functions 
 		var barLabel = function(d) { return d['source']; };
@@ -204,6 +193,8 @@ function arcTween(d) {
 		var x = d3.scale.linear().domain([0, d3.max(sortedData, barValue)]).range([0, maxBarWidth]);
 		// svg container element
 		var chart = d3.select('#source-graph').append("svg")
+		  .attr("preserveAspectRatio", "xMidYMid")
+          .attr("viewBox", "0 0 565 221")
 		  .attr('width', maxBarWidth + barLabelWidth + valueLabelWidth)
 		  .attr('height', gridLabelHeight + gridChartOffset + sortedData.length * barHeight);
 		// grid line labels

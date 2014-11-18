@@ -292,6 +292,10 @@ border-radius: 3px;
 position: relative;
 }
 
+#source-graph svg {
+	width: 100%;
+}
+
 #source-graph-container {
 	height: 300px;
 }

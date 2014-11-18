@@ -1,6 +1,6 @@
 require('newrelic');
 
-global.env = {tracker:'obama'}; // initializing global environment object & the tracked string
+global.env = {tracker:'obama', lastInit: new Date()}; // initializing global environment object & the tracked string
 
 var url = require("url"),
 express  = require('express'),
