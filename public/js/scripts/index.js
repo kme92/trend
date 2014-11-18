@@ -4,6 +4,7 @@ var languageGranularity = 'seconds';
 var granularity = 'seconds';
 var resizeCount = 0;
 var sourceVolumeData = [{"source": "<temp>loading", "count": 1}];
+var languageVolumeData = [{"lang": "<temp>loading", "count": 1}];
 var languageData = [{"granularity": "seconds", "lang":"en","count":1},
       	          {"granularity": "seconds", "lang":"in","count":3},
       	          {"granularity": "seconds", "lang":"jp","count":7},
@@ -27,9 +28,10 @@ $(document).ready(function(){
 	function strip_id(key, value)  { return key == '_id' ? undefined : value; }
 
 		
-	socket.on('all', function (data) {
+	/*socket.on('all', function (data) {
 		document.getElementById('console').innerHTML = 'feed: ' + JSON.stringify(data, strip_id, 2); 
-	});
+	});*/
+	
 	socket.on('volume', function (data) {
 		document.getElementById('console2').innerHTML = 'total volume: ' + JSON.stringify(data[0], strip_id, 2);
 		if(granularity == 'hours')
@@ -46,6 +48,129 @@ $(document).ready(function(){
 			}
 	});
 	
+	//language volume
+	
+//$(document).ready(function(){
+	
+	var width = 250,
+    height = 250,
+    radius = Math.min(width, height) / 2;
+
+var color = d3.scale.category20();
+
+var pie = d3.layout.pie()
+    .value(function(d) { return d.count; })
+    .sort(null);
+
+var arc = d3.svg.arc()
+    .innerRadius(radius - 50)
+    .outerRadius(radius - 20);
+
+var svg = d3.select("#languageGraph").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+var path = svg.selectAll("path");
+
+  /*var languagesByGranularity = d3.nest()
+      .key(function(d) { return d.granularity; })
+      .entries(languageData)
+      .reverse();
+
+ var li = d3.select("#language-dropdown").selectAll("li");
+      li.data(languagesByGranularity)
+    .enter().append("li").on("click", change);
+
+ d3.select("#language-dropdown").selectAll("li").on("click", change);*/
+
+ socket.on('languageVolume', function (data) {
+		//console.log(data);
+		languageVolumeData = data;
+		document.getElementById('console4').innerHTML = 'volume by language: ' + JSON.stringify(data, strip_id, 2);
+		change(data);
+	});
+ 
+ //change(li.data()[0]);
+ 
+  function change(data) {
+    var data0 = path.data(),
+        data1 = pie(data);
+
+    path = path.data(data1, data.lang);
+
+    path.enter().append("path")
+        .each(function(d, i) { this._current = findNeighborArc(i, data0, data1, key) || d; })
+        .attr("fill", function(d) { return color(d.data.lang); })
+      .append("title")
+        .text(function(d) { return d.data.lang; });
+
+    path.exit()
+        .datum(function(d, i) { return findNeighborArc(i, data1, data0, key) || d; })
+      .transition()
+        .duration(750)
+        .attrTween("d", arcTween)
+        .remove();
+
+    path.transition()
+        .duration(750)
+        .attrTween("d", arcTween);
+  }
+//});
+
+function key(d) {
+  return d.data.lang;
+}
+
+function type(d) {
+  d.count = +d.count;
+  return d;
+}
+
+function findNeighborArc(i, data0, data1, key) {
+  var d;
+  return (d = findPreceding(i, data0, data1, key)) ? {startAngle: d.endAngle, endAngle: d.endAngle}
+      : (d = findFollowing(i, data0, data1, key)) ? {startAngle: d.startAngle, endAngle: d.startAngle}
+      : null;
+}
+
+// Find the element in data0 that joins the highest preceding element in data1.
+function findPreceding(i, data0, data1, key) {
+  var m = data0.length;
+  while (--i >= 0) {
+    var k = key(data1[i]);
+    for (var j = 0; j < m; ++j) {
+      if (key(data0[j]) === k) return data0[j];
+    }
+  }
+}
+
+// Find the element in data0 that joins the lowest following element in data1.
+function findFollowing(i, data0, data1, key) {
+  var n = data1.length, m = data0.length;
+  while (++i < n) {
+    var k = key(data1[i]);
+    for (var j = 0; j < m; ++j) {
+      if (key(data0[j]) === k) return data0[j];
+    }
+  }
+}
+
+function arcTween(d) {
+  var i = d3.interpolate(this._current, d);
+  this._current = i(0);
+  return function(t) { return arc(i(t)); };
+}
+//});
+	
+	
+	/*socket.on('languageVolume', function (data) {
+		//console.log(data);
+		languageVolumeData = data;
+		document.getElementById('console4').innerHTML = 'volume by language: ' + JSON.stringify(data, strip_id, 2);
+		//renderChart();
+	});*/
 	
 	// source volume
 	
@@ -138,7 +263,7 @@ $(document).ready(function(){
 	//});
 	
 	socket.on('sourceVolume', function (data) {
-		console.log(data);
+		//console.log(data);
 		sourceVolumeData = data;
 		document.getElementById('console3').innerHTML = 'volume by source: ' + JSON.stringify(data, strip_id, 2);
 		renderChart();
@@ -158,6 +283,18 @@ $(document).ready(function(){
 		}, 30000);	
 	
 	renderVolumeGraph();
+	
+	$('#tracking-form').submit(function(e){
+		e.preventDefault();
+		
+		var trackingString = $('#tracking-input').val();
+		
+		$.post('/', {tracker: trackingString})
+			.done(function(data){
+				console.log(data);
+				$('#tracker').text('"' + data + '"');
+			});
+	});
 });
 
 function renderVolumeGraph() {
@@ -299,110 +436,3 @@ function setLanguageGranularity(elm) {
 		}
 	
 }
-
-$(document).ready(function(){
-	
-	var width = 250,
-    height = 250,
-    radius = Math.min(width, height) / 2;
-
-var color = d3.scale.category20();
-
-var pie = d3.layout.pie()
-    .value(function(d) { return d.count; })
-    .sort(null);
-
-var arc = d3.svg.arc()
-    .innerRadius(radius - 50)
-    .outerRadius(radius - 20);
-
-var svg = d3.select("#languageGraph").append("svg")
-    .attr("width", width)
-    .attr("height", height)
-  .append("g")
-    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
-var path = svg.selectAll("path");
-
-  var languagesByGranularity = d3.nest()
-      .key(function(d) { return d.granularity; })
-      .entries(languageData)
-      .reverse();
-
- var li = d3.select("#language-dropdown").selectAll("li");
-      li.data(languagesByGranularity)
-    .enter().append("li").on("click", change);
-
- d3.select("#language-dropdown").selectAll("li").on("click", change);
-
- change(li.data()[0]);
- 
-  function change(lang) {
-    var data0 = path.data(),
-        data1 = pie(lang.values);
-
-    path = path.data(data1, key);
-
-    path.enter().append("path")
-        .each(function(d, i) { this._current = findNeighborArc(i, data0, data1, key) || d; })
-        .attr("fill", function(d) { return color(d.data.lang); })
-      .append("title")
-        .text(function(d) { return d.data.lang; });
-
-    path.exit()
-        .datum(function(d, i) { return findNeighborArc(i, data1, data0, key) || d; })
-      .transition()
-        .duration(750)
-        .attrTween("d", arcTween)
-        .remove();
-
-    path.transition()
-        .duration(750)
-        .attrTween("d", arcTween);
-  }
-//});
-
-function key(d) {
-  return d.data.lang;
-}
-
-function type(d) {
-  d.count = +d.count;
-  return d;
-}
-
-function findNeighborArc(i, data0, data1, key) {
-  var d;
-  return (d = findPreceding(i, data0, data1, key)) ? {startAngle: d.endAngle, endAngle: d.endAngle}
-      : (d = findFollowing(i, data0, data1, key)) ? {startAngle: d.startAngle, endAngle: d.startAngle}
-      : null;
-}
-
-// Find the element in data0 that joins the highest preceding element in data1.
-function findPreceding(i, data0, data1, key) {
-  var m = data0.length;
-  while (--i >= 0) {
-    var k = key(data1[i]);
-    for (var j = 0; j < m; ++j) {
-      if (key(data0[j]) === k) return data0[j];
-    }
-  }
-}
-
-// Find the element in data0 that joins the lowest following element in data1.
-function findFollowing(i, data0, data1, key) {
-  var n = data1.length, m = data0.length;
-  while (++i < n) {
-    var k = key(data1[i]);
-    for (var j = 0; j < m; ++j) {
-      if (key(data0[j]) === k) return data0[j];
-    }
-  }
-}
-
-function arcTween(d) {
-  var i = d3.interpolate(this._current, d);
-  this._current = i(0);
-  return function(t) { return arc(i(t)); };
-}
-});

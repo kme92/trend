@@ -1,7 +1,10 @@
 require('newrelic');
 
+global.env = {tracker:'obama'}; // initializing global environment object & the tracked string
+
 var url = require("url"),
 express  = require('express'),
+bodyParser = require('body-parser'),
 emitter = require("events").EventEmitter,
 mongo = require("mongodb"),
 Cursor = mongo.Cursor,
@@ -16,10 +19,10 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
-require('./app/routes.js')(app);
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 server.listen(process.env.PORT || 8080);
-
 
 var util = require('util'),
 twitter = require('twitter');
@@ -30,7 +33,42 @@ access_token_key: '862470176-GsUOX29rM9M7pxVahZ1v4NR4UrkRQDwFzlSefI30',
 access_token_secret: 'ZlP7lCaaLBqLzaPX0NlbneiVQ9vYf1LflnDMp4Ev2IGKy'
 });
 
+
+//implementing currently trending in side bar
+
+/*
+twit.get('/trends/place.json', {include_entities:false, id: 1}, function(data, res) {
+    console.log(util.inspect(data[0].trends));
+});
+*/
+initialize(global.env.tracker);
+
+function initialize(tracker){
+	global.env.tracker = tracker;
 MongoClient.connect(uristring, function (err, db) { 
+	
+	//volume by language aggregation
+	
+	db.collection('languageVolumeCount', function (err, collection) {
+		if(err)
+			{
+			process.exit(1);
+			}
+		
+		collection.drop(function(err, result) {
+			if (err != null)
+				console.log(err);
+			db.createCollection('languageVolumeCount', function(err, collection) {
+				if(err)
+					{
+					console.log(err);
+					}
+				
+				startLanguageVolumeServer(collection);
+							    
+			});
+		});
+    });
 	
 	//volume by source aggregation
 	
@@ -141,12 +179,12 @@ MongoClient.connect(uristring, function (err, db) {
 					process.exit(3);
 				    }
 				    console.log ("successful initialization");
-				    twit.stream('user', {track:'obama'}, function(stream) {
+				    twit.stream('user', {track: global.env.tracker}, function(stream) {
 				    var index = 1;
 				    stream.on('data', function(data) {
 				    	if(data != null && data.source != undefined  && data.text != undefined){ 
 				    		data.source = data.source.replace(/<(?:.|\n)*?>/gm, '');
-				    	db.collection('feed', function(err, collection) {
+				    	/*db.collection('feed', function(err, collection) {
 				               collection.insert({
 				            	   'index': index,
 				            	   'data': data.text, 
@@ -160,21 +198,23 @@ MongoClient.connect(uristring, function (err, db) {
 				                                		 index++;
 				                                		 }
 			                                		 });
-			    	});
+			    	});*/
 				    }
 				    	 
 				    aggregateVolume(db, data);
 				    aggregateSourceVolume(db, data);
+				    aggregateLanguageVolume(db, data);
 				    });
 				    });
 				
-				    startFeedServer (collection);
+				    //startFeedServer (collection);
 				}); 
 			});
 		});
     });
 	
 });
+}
 
 function aggregateVolume(db, data)
 	{
@@ -286,7 +326,50 @@ function readAndSendSourceVolume (socket, collection) {
 	
 };
 
-function startFeedServer (collection) {
+
+//language volume code
+
+function aggregateLanguageVolume(db, data)
+{
+var lang = data.lang;
+if(lang != null){
+db.collection('languageVolumeCount', function (err, collection) {
+	
+	collection.update({"lang": lang},
+			    {$inc: {"count": 1}},
+		    {upsert:true,safe:true},
+		    function(err,data){
+		        if (err){
+		            console.log(err);
+		        }
+		        else
+		        	{
+		        	//console.log(util.inspect(data));
+		        	}
+		    }
+		);
+});
+}
+};
+
+function startLanguageVolumeServer (collection) {
+    io.sockets.on("connection", function (socket) {
+	setInterval(function(){
+		readAndSendLanguageVolume(socket, collection);
+		}, 5000);
+    });
+};
+
+function readAndSendLanguageVolume (socket, collection) {
+    collection.find({}, {"limit": 10, "sort": [["count", -1]]}).toArray(function(err, docs)
+    		{
+    		socket.emit("languageVolume", docs);
+    		});
+	
+};
+
+
+/*function startFeedServer (collection) {
     io.sockets.on("connection", function (socket) {
 	readAndSendFeed(socket, collection);
     });
@@ -330,6 +413,8 @@ Cursor.prototype.intervalEach = function(interval, callback) {
     } else {
 	callback(new Error("Cursor is closed"), null);
     }
-};
+};*/
 
+var actions = {initialize: initialize};
 
+require('./app/routes.js')(app, actions);

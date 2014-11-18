@@ -35,9 +35,9 @@
 		<h6 style="left:20px; position: relative;">todo list</h6>
 		<ul style="padding-right:10px;">
 			<li>make source volume graph responsive</li>
-			<li>make pie graph dynamic</li>
+			<li>animate source volume graph</li>
 			<li>implement tracking word changing</li>
-			<li>add more graphs?</li>
+			<li>add trending topics worldwide to this side-bar</li>
 			<li>add mobile menu</li>
 			<li>clean up code</li>
 			<li>anything i missed? email me at chekmanirov@gmail.com</li>
@@ -80,7 +80,8 @@
     outline: none;
 "></form>
 <ul class="nav navbar-nav navbar-right">
-        <li id="li-user"><p><span style="color:#9696A7;">currently tracking</span> "obama"</p></li> <!--TODO: Update tag id-->
+        <li id="li-user"><p><span style="color:#9696A7;">currently tracking </span>
+        	<span id="tracker">"<%= tracker %>"</span></p></li> <!--TODO: Update tag id-->
         <!--<li id="li-logout">
         	<a id="logout" href="/logout"><span class="glyphicon glyphicon-log-out"></span></a>
         </li>-->
@@ -153,14 +154,17 @@ display: inline-block;"><p style="
 </div>
 	<p style="text-align:center; color:white;font-size:12px;
     font-weight: bold; padding-bottom: 20px;">raw data</p>
-	<div class="content">
+	<!--<div class="content">
 	    <div><pre id="console"></pre></div>
-	</div>
+	</div>-->
 		<div class="content">
 	    <div><pre id="console2"></pre></div>
 	</div>
 	<div class="content">
 	    <div><pre id="console3"></pre></div>
+	</div>
+	<div class="content">
+	    <div><pre id="console4"></pre></div>
 	</div>
 </div>
 </div>
