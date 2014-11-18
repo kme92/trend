@@ -1,6 +1,6 @@
 require('newrelic');
 
-global.env = {tracker:'obama', lastInit: new Date()}; // initializing global environment object & the tracked string
+global.env = {tracker:'obama', lastInit: new Date(), trends: []}; // initializing global environment object & the tracked string
 
 var url = require("url"),
 express  = require('express'),
@@ -35,12 +35,29 @@ access_token_secret: 'ZlP7lCaaLBqLzaPX0NlbneiVQ9vYf1LflnDMp4Ev2IGKy'
 
 
 //implementing currently trending in side bar
+getTrends();
+setInterval(function(){
+	getTrends();
+	}, 60000*10);
 
-/*
-twit.get('/trends/place.json', {include_entities:false, id: 1}, function(data, res) {
-    console.log(util.inspect(data[0].trends));
+io.sockets.on("connection", function (socket) {
+	pushTrends(socket);
+	setInterval(function(){
+		pushTrends(socket);
+		}, 60000*10);
 });
-*/
+
+function getTrends(){
+	twit.get('/trends/place.json', {include_entities:false, id: 1}, function(data, res) {
+	    global.env.trends = data;
+	});
+	}
+
+function pushTrends(socket)
+	{
+	socket.emit("trends", global.env.trends);
+	}
+
 initialize(global.env.tracker);
 
 function initialize(tracker){
@@ -178,7 +195,7 @@ MongoClient.connect(uristring, function (err, db) {
 					console.log ("err: uncapped collection");
 					process.exit(3);
 				    }
-				    console.log ("successful initialization");
+				    console.log ("successful initialization: " + global.env.tracker);
 				    twit.stream('user', {track: global.env.tracker}, function(stream) {
 				    var index = 1;
 				    stream.on('data', function(data) {

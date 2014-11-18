@@ -12,7 +12,19 @@ module.exports = function(app, actions) {
 	// post new tracking string ============
 	// =====================================
 	app.post('/', function (req, res) {
-		  actions.initialize(req.body.tracker);
-		  res.end(global.env.tracker);
+		var curDate = new Date();
+		var diff = Math.ceil((curDate - global.env.lastInit)/1000);
+		if(diff >= 30)
+			{
+			//console.log(diff);
+			  actions.initialize(req.body.tracker);
+			  res.end(global.env.tracker);
+			  global.env.lastInit = curDate;
+			}
+		else
+			{
+			//console.log("in else");
+			res.end((30-diff).toString());
+			}
 		});	
 }

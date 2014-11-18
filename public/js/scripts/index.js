@@ -28,9 +28,9 @@ $(document).ready(function(){
 	function strip_id(key, value)  { return key == '_id' ? undefined : value; }
 
 		
-	/*socket.on('all', function (data) {
-		document.getElementById('console').innerHTML = 'feed: ' + JSON.stringify(data, strip_id, 2); 
-	});*/
+	socket.on('trends', function (data) {
+		document.getElementById('console').innerHTML = 'trends: ' + JSON.stringify(data, strip_id, 2); 
+	});
 	
 	socket.on('volume', function (data) {
 		document.getElementById('console2').innerHTML = 'total volume: ' + JSON.stringify(data[0], strip_id, 2);
@@ -275,6 +275,10 @@ function arcTween(d) {
 	
 	renderVolumeGraph();
 	
+	$('.alert .close').on('click', function(e) {
+	    $(this).parent().hide();
+	});
+	
 	$('#tracking-form').submit(function(e){
 		e.preventDefault();
 		
@@ -283,8 +287,19 @@ function arcTween(d) {
 		$.post('/', {tracker: trackingString})
 			.done(function(data){
 				console.log(data);
-				$('#tracker').text('"' + data + '"');
-				document.title = "trend | " + data;
+				if(data == trackingString){$('#tracker').text('"' + data + '"');
+				document.title = "trend | " + data;}
+				else
+					{
+					var waitString = data + ' second'
+					if(data != "1")
+						{
+						waitString += "s";
+						}
+						
+					$('#alert-text').text("Please wait " + waitString + " before setting a new tracker.");
+					$('#alert-box').show();
+					}
 			});
 	});
 });

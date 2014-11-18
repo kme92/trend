@@ -46,7 +46,7 @@
 		<div class="wrapper">
 	
 		<ul id="footer-nav">
-		<li><p id="copyright">© 2014 Kevin Me</p></li>
+		<li><p id="copyright">© 2014 kevin me</p></li>
 		<li><a href="http://inertance.herokuapp.com/" target="_blank" rel="nofollow">about me<i class="fa fa-external-link" style="
     padding-left: 5px;
     position: relative;
@@ -89,6 +89,12 @@
 </header>
 <div id="main-content-container" class="container">
 	<div class="container text-center" style="width:100%;">
+		<div class="row"><div id="alert-container" class="col-lg-12 col-md-12 col-sm-12">
+			<div id="alert-box" class="alert alert-danger alert-dismissible" role="alert">
+  <button type="button" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  <strong>Alert:</strong> <span id="alert-text"></span>
+</div>
+		</div></div>
 		<div class="row">
                 <div id="language-graph-container" class="col-lg-6 col-md-12 col-sm-12">
                 	<div id="language-graph-sizing-container">
@@ -152,9 +158,6 @@ display: inline-block;"><p style="
 </div>
 	<p style="text-align:center; color:white;font-size:12px;
     font-weight: bold; padding-bottom: 20px;">raw data</p>
-	<!--<div class="content">
-	    <div><pre id="console"></pre></div>
-	</div>-->
 		<div class="content">
 	    <div><pre id="console2"></pre></div>
 	</div>
@@ -163,6 +166,9 @@ display: inline-block;"><p style="
 	</div>
 	<div class="content">
 	    <div><pre id="console4"></pre></div>
+	</div>
+	<div class="content">
+	    <div><pre id="console"></pre></div>
 	</div>
 </div>
 </div>
