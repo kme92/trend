@@ -3,9 +3,9 @@ var yaxisoffset = 40;
 var languageGranularity = 'seconds';
 var granularity = 'seconds';
 var resizeCount = 0;
-var sourceVolumeData = [{"source": "<temp>loading", "count": 1}];
-var languageVolumeData = [{"lang": "<temp>loading", "count": 1}];
-var languageData = [{"granularity": "seconds", "lang":"en","count":1},
+var sourceVolumeData = [];
+var languageVolumeData = [];
+/*var languageData = [{"granularity": "seconds", "lang":"en","count":1},
       	          {"granularity": "seconds", "lang":"in","count":3},
       	          {"granularity": "seconds", "lang":"jp","count":7},
       	          {"granularity": "seconds", "lang":"cn","count":4},
@@ -19,7 +19,7 @@ var languageData = [{"granularity": "seconds", "lang":"en","count":1},
       	          {"granularity": "hours", "lang":"in","count":258},
       	          {"granularity": "hours", "lang":"jp","count":612},
       	          {"granularity": "hours", "lang":"cn","count":300},
-      	          {"granularity": "hours", "lang":"fr","count":120}];
+      	          {"granularity": "hours", "lang":"fr","count":120}];*/
 
 $(document).ready(function(){
 	
