@@ -1,6 +1,6 @@
 require('newrelic');
 
-global.env = {tracker:'obama', lastInit: new Date(), trends: []}; // initializing global environment object & the tracked string
+global.env = {tracker:'twitter', lastInit: new Date(), trends: []}; // initializing global environment object & the tracked string
 
 var url = require("url"),
 express  = require('express'),
@@ -61,6 +61,10 @@ function pushTrends(socket)
 initialize(global.env.tracker);
 
 function initialize(tracker){
+	if(twit.currentStream)
+		{
+		twit.currentStream.destroy();
+		}
 	global.env.tracker = tracker;
 MongoClient.connect(uristring, function (err, db) { 
 	
@@ -199,6 +203,7 @@ MongoClient.connect(uristring, function (err, db) {
 				    twit.stream('user', {track: global.env.tracker}, function(stream) {
 				    var index = 1;
 				    stream.on('data', function(data) {
+				    	twit.currentStream = stream;
 				    	if(data != null && data.source != undefined  && data.text != undefined){ 
 				    		data.source = data.source.replace(/<(?:.|\n)*?>/gm, '');
 				    	/*db.collection('feed', function(err, collection) {
