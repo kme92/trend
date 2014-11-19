@@ -21,15 +21,52 @@ var languageVolumeData = [];
       	          {"granularity": "hours", "lang":"cn","count":300},
       	          {"granularity": "hours", "lang":"fr","count":120}];*/
 
+function setTracker(elm){
+	updateTracker($(elm).text());
+}
+
+function updateTracker(tracker){
+	$.post('/', {tracker: tracker})
+	.done(function(data){
+		console.log(data);
+		if(data == tracker){$('#tracker').text('"' + data + '"');
+		document.title = "trend | " + data;}
+		else
+			{
+			var waitString = data + ' second'
+			if(data != "1")
+				{
+				waitString += "s";
+				}
+				
+			$('#alert-text').text("Please wait " + waitString + " before setting a new tracker.");
+			$('#alert-box').show();
+			}
+	});
+}
+
 $(document).ready(function(){
 	
 	var socket = io.connect('/');
 	pingServer(socket); //initial ping - heroku will close connection if no ping within 30s of connection
 	function strip_id(key, value)  { return key == '_id' ? undefined : value; }
+	
+	$('#tracking-form').submit(function(e){
+		e.preventDefault();
+		
+		var trackingString = $('#tracking-input').val();
+		updateTracker(trackingString);
 
+	});
 		
 	socket.on('trends', function (data) {
-		document.getElementById('console').innerHTML = 'trends: ' + JSON.stringify(data, strip_id, 2); 
+		$('#trending-list ol').empty();
+		$(data[0].trends).each(function(){
+			console.log($(this)[0].name);
+			$('#trending-list ol').append('<li class="trend-link"><a href="#" onclick="setTracker(this);">' + 
+					$(this)[0].name + '</a></li>');
+		});
+		document.getElementById('console').innerHTML = 'trends: ' + JSON.stringify(data[0].trends, strip_id, 2); 
 	});
 	
 	socket.on('volume', function (data) {
@@ -277,30 +314,6 @@ function arcTween(d) {
 	
 	$('.alert .close').on('click', function(e) {
 	    $(this).parent().hide();
-	});
-	
-	$('#tracking-form').submit(function(e){
-		e.preventDefault();
-		
-		var trackingString = $('#tracking-input').val();
-		
-		$.post('/', {tracker: trackingString})
-			.done(function(data){
-				console.log(data);
-				if(data == trackingString){$('#tracker').text('"' + data + '"');
-				document.title = "trend | " + data;}
-				else
-					{
-					var waitString = data + ' second'
-					if(data != "1")
-						{
-						waitString += "s";
-						}
-						
-					$('#alert-text').text("Please wait " + waitString + " before setting a new tracker.");
-					$('#alert-box').show();
-					}
-			});
 	});
 });
 
