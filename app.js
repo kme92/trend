@@ -1,6 +1,6 @@
 require('newrelic');
 
-global.env = {tracker:'twitter', lastInit: new Date(), trends: []}; // initializing global environment object & the tracked string
+global.env = {tracker:'reddit', lastInit: new Date(), trends: []}; // initializing global environment object & the tracked string
 
 var url = require("url"),
 express  = require('express'),
