@@ -306,4 +306,5 @@ position: relative;
 	display: none;
 }
 
-.trend-link a {color: white;}
+.trend-link a {color: white;
+word-break: break-word;}
