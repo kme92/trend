@@ -199,6 +199,7 @@ svg {
 }
 
 #footer-nav li {
+	padding-left: 15px;
 	margin-right: 15px; 
 	padding-right: 15px; 
 	margin-top: 5px; 
@@ -316,6 +317,10 @@ word-break: break-word;}
 	border-bottom:4px solid #000000;
 }
 
-#footer-more-collapse {
+#footer-more-collapse, #footer-more {
 	display:none;
+}
+
+#footer-more-expand, #footer-more-collapse {
+	cursor: pointer;
 }

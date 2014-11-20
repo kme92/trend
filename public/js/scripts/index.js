@@ -47,6 +47,18 @@ function updateTracker(tracker){
 
 $(document).ready(function(){
 	
+	$('#footer-more-expand').click(function(){
+		$('#footer-more-expand').hide();
+		$('#footer-more').show();
+		$('#footer-more-collapse').show();
+	});
+	
+	$('#footer-more-collapse').click(function(){
+		$('#footer-more-collapse').hide();
+		$('#footer-more').hide();
+		$('#footer-more-expand').show();
+	});
+	
 	var socket = io.connect('/');
 	pingServer(socket); //initial ping - heroku will close connection if no ping within 30s of connection
 	function strip_id(key, value)  { return key == '_id' ? undefined : value; }
