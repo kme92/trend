@@ -312,9 +312,9 @@ word-break: break-word;}
 
 .footer-last {margin-right: 5px;}
 
-.caret.caret-reversed {
+.caret.caret-reversed-white {
 	border-top-width:0px;
-	border-bottom:4px solid #000000;
+	border-bottom:4px solid white;
 }
 
 #footer-more-collapse, #footer-more {
