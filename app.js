@@ -11,7 +11,7 @@ Cursor = mongo.Cursor,
 MongoClient = mongo.MongoClient,
 assert = require("assert");
 
-var uristring = process.env.MONGOLAB_URI || "mongodb://admin:admin@ds051170.mongolab.com:51170/heroku_app31104561"; 
+var uristring = process.env.MONGOLAB_URI || "mongodb://admin:admin@ds051170.mongolab.com:51170/heroku_app31104561";
 var mongoUrl = url.parse (uristring);
 
 var app = require('express')();
@@ -92,7 +92,7 @@ MongoClient.connect(uristring, function (err, db) {
     });
 	
 	//volume by source aggregation
-	
+
 	db.collection('sourceVolumeCount', function (err, collection) {
 		if(err)
 			{
@@ -122,14 +122,14 @@ MongoClient.connect(uristring, function (err, db) {
 			{
 			process.exit(1);
 			}
-	
+
 		// too much nesting??
-		
+
 		collection.drop(function(err, result) {
 			if (err != null)
 				console.log(err);
+
 			db.createCollection('volumeCount', function(err, collection) {
-				
 				for(var hour = 0; hour < 24; hour++)
 		    	{
 				var hourOb = {};
@@ -169,8 +169,6 @@ MongoClient.connect(uristring, function (err, db) {
 			});
 		});
     });
-		
-	
 	
 	// feed storage
 	
