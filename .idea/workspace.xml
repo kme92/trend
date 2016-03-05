@@ -2,8 +2,669 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa9cef5e-6247-4ed0-a017-1075d8e4409f" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/.gitmodules" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/CONTRIBUTING.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/admin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/aggregation_cursor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/auth/mongodb_cr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/auth/mongodb_gssapi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/auth/mongodb_plain.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/auth/mongodb_scram.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/auth/mongodb_sspi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/auth/mongodb_x509.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/collection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/collection/aggregation.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/collection/batch/common.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/collection/batch/ordered.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/collection/batch/unordered.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/collection/commands.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/collection/core.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/collection/geo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/collection/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/collection/query.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/collection/shared.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/command_cursor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/commands/base_command.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/commands/db_command.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/commands/delete_command.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/commands/get_more_command.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/commands/insert_command.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/commands/kill_cursor_command.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/commands/query_command.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/commands/update_command.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/connection/base.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/connection/connection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/connection/connection_pool.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/connection/connection_utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/connection/mongos.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/connection/read_preference.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/connection/repl_set/ha.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/connection/repl_set/options.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/connection/repl_set/repl_set.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/connection/repl_set/repl_set_state.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/connection/repl_set/strategies/ping_strategy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/connection/repl_set/strategies/statistics_strategy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/connection/server.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/connection/server_capabilities.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/connection/url_parser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/cursor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/cursorstream.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/db.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/gridfs/chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/gridfs/grid.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/gridfs/gridstore.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/gridfs/readstream.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/mongo_client.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/responses/mongo_reply.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/scope.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/binding.gyp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/browser_build/bson.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/browser_build/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/build/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/build/binding.Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/build/bson.target.mk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/build/config.gypi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/build/gyp-mac-tool" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/build_browser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/builderror.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/ext/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/ext/bson.cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/ext/bson.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/ext/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/ext/win32/ia32/bson.node" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/ext/win32/x64/bson.node" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/ext/wscript" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/lib/bson/binary.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/lib/bson/binary_parser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/lib/bson/bson.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/lib/bson/bson_new.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/lib/bson/code.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/lib/bson/db_ref.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/lib/bson/double.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/lib/bson/float_parser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/lib/bson/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/lib/bson/long.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/lib/bson/max_key.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/lib/bson/min_key.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/lib/bson/objectid.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/lib/bson/symbol.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/lib/bson/timestamp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/node_modules/nan/.dntrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/node_modules/nan/CHANGELOG.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/node_modules/nan/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/node_modules/nan/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/node_modules/nan/appveyor.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/node_modules/nan/include_dirs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/node_modules/nan/nan.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/node_modules/nan/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/tools/gleak.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/tools/jasmine-1.1.0/MIT.LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/tools/jasmine-1.1.0/jasmine-html.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/tools/jasmine-1.1.0/jasmine.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/tools/jasmine-1.1.0/jasmine.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/tools/jasmine-1.1.0/jasmine_favicon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/binding.gyp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/build/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/build/binding.Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/build/config.gypi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/build/gyp-mac-tool" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/build/kerberos.target.mk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/builderror.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/auth_processes/mongodb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/base64.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/base64.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/kerberos.cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/kerberos.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/kerberos.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/kerberos_context.cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/kerberos_context.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/kerberosgss.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/kerberosgss.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/sspi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/win32/base64.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/win32/base64.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/win32/kerberos.cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/win32/kerberos.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/win32/kerberos_sspi.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/win32/kerberos_sspi.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/win32/worker.cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/win32/worker.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_buffer.cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_buffer.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_buffer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_buffer_descriptor.cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_buffer_descriptor.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_buffer_descriptor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_context.cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_context.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_context.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_credentials.cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_credentials.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_credentials.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/worker.cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/lib/worker.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/test/kerberos_tests.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/test/kerberos_win32_test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/test/win32/security_buffer_descriptor_tests.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/test/win32/security_buffer_tests.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/kerberos/test/win32/security_credentials_tests.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/util.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/error.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/recorders/node-cassandra-cql.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/transaction/tracer/debug.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/.bin/bunyan" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/AUTHORS" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/CHANGES.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/TODO.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/bin/bunyan" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/examples/err.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/examples/handle-fs-error.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/examples/hi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/examples/level.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/examples/multi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/examples/raw-stream.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/examples/ringbuffer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/examples/server.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/examples/src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/examples/unstringifyable.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/lib/bunyan.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/test/buffer.test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/test/child-behaviour.test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/test/cli.test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/test/corpus/all.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/test/corpus/bogus.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/test/corpus/extrafield.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/test/corpus/log1.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/test/corpus/log1.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/test/corpus/log2.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/test/corpus/non-object-res.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/test/corpus/simple.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/test/corpus/withreq.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/test/ctor.test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/test/cycles.test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/test/error-event.test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/test/log.test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/test/other-api.test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/test/raw-stream.test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/test/ringbuffer.test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/test/std-serializers.test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/tools/cutarelease.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/tools/jsstyle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/tools/screenshot1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/tools/statsd-notes.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/tools/timechild.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/tools/timeguard.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/bunyan/tools/timesrc.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/.eslintrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/CHANGELOG.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/context.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/glue.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/node_modules/shimmer/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/node_modules/shimmer/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/node_modules/shimmer/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/node_modules/shimmer/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/node_modules/shimmer/test/init.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/node_modules/shimmer/test/massWrap.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/node_modules/shimmer/test/unwrap.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/node_modules/shimmer/test/wrap.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/add-remove.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/connection-handler-disconnects.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/core-asynclistener-error-multiple-handled.simple.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/core-asynclistener-error-multiple-mix.simple.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/core-asynclistener-error-multiple-unhandled.simple.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/core-asynclistener-error-net.simple.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/core-asynclistener-error-throw-in-after.simple.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/core-asynclistener-error-throw-in-before-multiple.simple.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/core-asynclistener-error-throw-in-before.simple.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/core-asynclistener-error-throw-in-error.simple.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/core-asynclistener-error.simple.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/core-asynclistener-nexttick-remove.simple.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/core-asynclistener-only-add.simple.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/core-asynclistener-remove-before.simple.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/core-asynclistener-remove-inflight-error.simple.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/core-asynclistener-remove-inflight.simple.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/core-asynclistener.simple.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/core/core-asynclistener-add-inflight.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/core/core-asynclistener-error-throw-in-before-inflight.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/errors-this-tick.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/fork-listen2-problem.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/fork-listener.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/handle.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/no-after-following-error.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/overlapping-nexttick.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/simple-counter-with-io.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/simple-counter.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/async-listener/test/simplified-error.simple.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/emitter-listener/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/emitter-listener/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/emitter-listener/listener.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/emitter-listener/node_modules/shimmer/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/emitter-listener/node_modules/shimmer/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/emitter-listener/node_modules/shimmer/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/emitter-listener/node_modules/shimmer/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/emitter-listener/node_modules/shimmer/test/init.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/emitter-listener/node_modules/shimmer/test/massWrap.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/emitter-listener/node_modules/shimmer/test/unwrap.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/emitter-listener/node_modules/shimmer/test/wrap.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/emitter-listener/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/node_modules/emitter-listener/test/basic.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/test/async-context.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/test/async-no-run-queue-multiple.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/test/bind-emitter.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/test/bind.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/test/crypto.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/test/dns.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/test/error-handling.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/test/fs.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/test/interleave-contexts.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/test/monkeypatching.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/test/namespaces.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/test/nesting.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/test/net-events.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/test/proper-exit.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/test/simple.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/test/timers.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/test/tracer-scenarios.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/continuation-local-storage/test/zlib.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/json-stringify-safe/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/proxying-agent/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/proxying-agent/LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/proxying-agent/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/proxying-agent/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/proxying-agent/lib/ntlm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/proxying-agent/lib/proxying-agent.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/proxying-agent/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/benchmarkr/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/benchmarkr/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/benchmarkr/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/benchmarkr/commands/shutdown/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/benchmarkr/commands/shutdown/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/benchmarkr/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/benchmarkr/logger.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/benchmarkr/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/benchmarkr/services.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/benchmarkr/services/memcached/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/benchmarkr/services/memcached/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/benchmarkr/services/mongodb/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/benchmarkr/services/mongodb/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/benchmarkr/services/mysqld/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/benchmarkr/services/mysqld/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/benchmarkr/services/redis/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/benchmarkr/services/redis/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/instrumentation/pg-force-native.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/instrumentation/pg-native.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/instrumentation/pg.common.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/instrumentation/pg.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/transaction/segment-callback.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/cat_map.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/rum_cookie.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/back_quoted_identifiers.mysql.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/back_quoted_identifiers.mysql.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/comment_delimiters_in_strings.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/comment_delimiters_in_strings.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/double_quoted_identifiers.postgres.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/double_quoted_identifiers.postgres.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/end_of_line_comment_in_string.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/end_of_line_comment_in_string.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/end_of_query_comment_cstyle.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/end_of_query_comment_cstyle.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/end_of_query_comment_doubledash.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/end_of_query_comment_doubledash.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/end_of_query_comment_hash.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/end_of_query_comment_hash.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/escape_string_constants.postgres.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/escape_string_constants.postgres.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/malformed/unterminated_double_quoted_string.mysql.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/malformed/unterminated_single_quoted_string.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/multiple_literal_types.mysql.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/multiple_literal_types.mysql.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/numbers_in_identifiers.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/numbers_in_identifiers.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/numeric_literals.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/numeric_literals.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/pathological/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/pathological/end_of_line_comments_with_quotes.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/pathological/end_of_line_comments_with_quotes.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/pathological/mixed_comments_and_quotes.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/pathological/mixed_comments_and_quotes.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/pathological/mixed_quotes_comments_and_newlines.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/pathological/mixed_quotes_comments_and_newlines.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/pathological/mixed_quotes_end_of_line_comments.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/pathological/mixed_quotes_end_of_line_comments.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/pathological/quote_delimiters_in_comments.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/pathological/quote_delimiters_in_comments.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_double_quoted.mysql.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_double_quoted.mysql.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_single_quoted.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_single_quoted.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_with_backslash_and_twin_single_quotes.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_with_backslash_and_twin_single_quotes.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_with_embedded_double_quote.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_with_embedded_double_quote.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_with_embedded_newline.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_with_embedded_newline.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_with_embedded_single_quote.mysql.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_with_embedded_single_quote.mysql.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_with_escaped_quotes.mysql.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_with_escaped_quotes.mysql.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_with_trailing_backslash.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_with_trailing_backslash.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_with_trailing_escaped_backslash.mysql.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_with_trailing_escaped_backslash.mysql.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_with_trailing_escaped_backslash_single_quoted.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_with_trailing_escaped_backslash_single_quoted.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_with_trailing_escaped_quote.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_with_trailing_escaped_quote.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_with_twin_single_quotes.obfuscated" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/string_with_twin_single_quotes.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/agent_sendEvents.test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/error.test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/instrumentation/hape.test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-7/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-7/hapi-capture-params.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-7/hapi-ignoring.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-7/hapi-render.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-7/hapi-router.tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-7/newrelic.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-7/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-7/views/index.ejs" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/node_modules/mongodb/Readme.md" afterPath="$PROJECT_DIR$/node_modules/mongodb/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/.drone.yml" afterPath="$PROJECT_DIR$/node_modules/newrelic/.drone.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/.eslintrc" afterPath="$PROJECT_DIR$/node_modules/newrelic/.eslintrc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/.travis.yml" afterPath="$PROJECT_DIR$/node_modules/mongodb/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/connection-failure/413.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/connection-failure/413.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/connection-failure/415.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/connection-failure/415.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/connection-failure/503.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/connection-failure/503.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/LICENSE" afterPath="$PROJECT_DIR$/node_modules/mongodb/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/LICENSE" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/LICENSE" afterPath="$PROJECT_DIR$/node_modules/newrelic/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/json-stringify-safe/LICENSE" afterPath="$PROJECT_DIR$/node_modules/newrelic/node_modules/json-stringify-safe/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/Makefile" afterPath="$PROJECT_DIR$/node_modules/mongodb/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/Makefile" afterPath="$PROJECT_DIR$/node_modules/newrelic/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/NEWS.md" afterPath="$PROJECT_DIR$/node_modules/newrelic/NEWS.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/README.md" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/README.md" afterPath="$PROJECT_DIR$/node_modules/newrelic/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/json-stringify-safe/README.md" afterPath="$PROJECT_DIR$/node_modules/newrelic/node_modules/json-stringify-safe/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/README.md" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/README.md" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/sql_obfuscation/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/agent.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/agent.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/agent/agent.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/agent/agent.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/agent_helper.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/lib/agent_helper.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/transaction/trace/aggregator.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/transaction/trace/aggregator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/analytics_events.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/analytics_events.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/stats/apdex.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/stats/apdex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/api.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/api.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/collector/api.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/collector/api.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/api/api.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/api/api.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/collector/api.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/collector/api.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/app-use.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/app-use.tap.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/attribute_configuration.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/attribute_configuration.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/cat/background.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/cat/background.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/instrumentation/cassandra.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/instrumentation/cassandra.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/cat/cat.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/cat/cat.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/util/codec.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/util/codec.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/collector-remote-method.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/collector-remote-method.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/config.default.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/config.default.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/config.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/config.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/config.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/connect-1/connect-error-intercept.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/connect-1/connect-error-intercept.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/connect.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/connect.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/api/connection.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/api/connection.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/api/custom-instrumentation.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/api/custom-instrumentation.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/recorders/custom.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/recorders/custom.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/util/deep-equal.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/util/deep-equal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/docker_env_vars.sh" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/docker_env_vars.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/environment.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/environment.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/environment.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/environment.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-ejs/erk.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-ejs/erk.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/erk.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/erk.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/api/error-data.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/api/error-data.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/express.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/express.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/instrumentation/express.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/instrumentation/express.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express2-ejs/express2-ignoring.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express2-ejs/express2-ignoring.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express2-ejs/express2-render-ejs.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express2-ejs/express2-render-ejs.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express2-ejs/express2-router.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express2-ejs/express2-router.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-ejs/express3-async-error.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-ejs/express3-async-error.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-ejs/express3-capture-params-ejs.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-ejs/express3-capture-params-ejs.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-ejs/express3-ignoring.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-ejs/express3-ignoring.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-mongodb-async/express3-mongodb-async.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-mongodb-async/express3-mongodb-async.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-redis/express3-redis-tt.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-redis/express3-redis-tt.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-ejs/express3-render-ejs.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-ejs/express3-render-ejs.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-ejs/express3-router.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-ejs/express3-router.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/express4-async-error.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/express4-async-error.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/express4-capture-params-ejs.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/express4-capture-params-ejs.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/express4-detection.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/express4-detection.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/express4-ignoring.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/express4-ignoring.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/express4-render-ejs.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/express4-render-ejs.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/express4-router-bare.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/express4-router-bare.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/express4-router-params.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/express4-router-params.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/collector/facts.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/collector/facts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/facts.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/facts.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/fake-collector.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/lib/fake-collector.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/feature_flag.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/feature_flag.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/feature_flags.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/feature_flags.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/util/flatten.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/util/flatten.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/generic-pool.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/generic-pool.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/recorders/generic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/recorders/generic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/metrics-recorder/generic.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/metrics-recorder/generic.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mongodb-native-1-4-0/gridfs-no-explode.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mongodb-native-1-4-0/gridfs-no-explode.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-4/hapi-capture-params.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-4/hapi-capture-params.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-6.9/hapi-capture-params.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-6.9/hapi-capture-params.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-2-0-0/hapi-ignoring.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-2-0-0/hapi-ignoring.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-4/hapi-ignoring.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-4/hapi-ignoring.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-6.9/hapi-ignoring.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-6.9/hapi-ignoring.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-2-0-0/hapi-render.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-2-0-0/hapi-render.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-4/hapi-render.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-4/hapi-render.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-6.9/hapi-render.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-6.9/hapi-render.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-2-0-0/hapi-router.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-2-0-0/hapi-router.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-4/hapi-router.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-4/hapi-router.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-6.9/hapi-router.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-6.9/hapi-router.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/hapi.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/hapi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/harvest.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/harvest.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/util/hashes.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/util/hashes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/high-security.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/high-security.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/collector/http-agents.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/collector/http-agents.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/metrics-recorder/http-external.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/metrics-recorder/http-external.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/instrumentation/http-rum.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/instrumentation/http-rum.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/core/http.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/core/http.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/recorders/http.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/recorders/http.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/yakaa/http.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/node_modules/yakaa/http.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/instrumentation/http.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/instrumentation/http.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/instrumentation/http/http.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/instrumentation/http/http.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/metrics-recorder/http.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/metrics-recorder/http.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/recorders/http_external.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/recorders/http_external.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/index.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/index.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/index.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/stats/index.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/stats/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/transaction/index.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/transaction/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/transaction/trace/index.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/transaction/trace/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/transaction/tracer/index.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/transaction/tracer/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/scripts/index.js" afterPath="$PROJECT_DIR$/public/js/scripts/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/index.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/index.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mongodb-native-1-4-0/instrumentation-mongodb.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mongodb-native-1-4-0/instrumentation-mongodb.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentations.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentations.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/agent/intrinsics.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/agent/intrinsics.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/issue171.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/issue171.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/util/label-parser.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/util/label-parser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/licenses.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/licenses.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/licenses.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/licenses.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/logger.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/logger.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/logger.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/logger.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/mapper.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/mapper.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/memcached.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/memcached.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/recorders/memcached.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/recorders/memcached.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/instrumentation/memcached.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/instrumentation/memcached.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/metrics-recorder/memcached.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/metrics-recorder/memcached.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/api/metric-data.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/api/metric-data.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/instrumentation/mongo.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/instrumentation/mongo.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mongodb-native-1-1-7/mongodb-lifecycle.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mongodb-native-1-1-7/mongodb-lifecycle.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/mongodb.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/mongodb.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/metrics-recorder/mongodb.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/metrics-recorder/mongodb.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mysql-2/mysql-basic-pool.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mysql-2/mysql-basic-pool.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mysql-2/mysql-basic.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mysql-2/mysql-basic.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mysql-0-9/mysql-lifecycle.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mysql-0-9/mysql-lifecycle.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mysql-2/mysql-pooling.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mysql-2/mysql-pooling.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/mysql.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/mysql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/instrumentation/mysql.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/instrumentation/mysql.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/metrics-recorder/mysql.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/metrics-recorder/mysql.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/names.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/names.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/helpers/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/helpers/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/api/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/api/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/cat/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/cat/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/connection-failure/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/connection-failure/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/instrumentation/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/instrumentation/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/transaction/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/transaction/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/connect-1/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/connect-1/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/connect-2/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/connect-2/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/connect-3/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/connect-3/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express2-ejs/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express2-ejs/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-ejs/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-ejs/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-mongodb-async/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-mongodb-async/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-redis/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-redis/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-2-0-0/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-2-0-0/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-4/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-4/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-6.9/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-6.9/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mongodb-native-1-1-7/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mongodb-native-1-1-7/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mongodb-native-1-3-19/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mongodb-native-1-3-19/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mongodb-native-1-4-0/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mongodb-native-1-4-0/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mysql-0-9/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mysql-0-9/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mysql-2/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mysql-2/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/restify-2-6-0/newrelic.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/restify-2-6-0/newrelic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/node-cassandra-cql.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/node-cassandra-cql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/normalizer.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/normalizer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/metric/normalizer.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/metric/normalizer.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/recorders/other.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/recorders/other.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/transaction/tracer/instrumentation/outbound.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/transaction/tracer/instrumentation/outbound.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/instrumentation/http/outbound.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/instrumentation/http/outbound.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/package.json" afterPath="$PROJECT_DIR$/node_modules/mongodb/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/package.json" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/package.json" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/package.json" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/isarray/package.json" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/isarray/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/package.json" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/examples/express/sequelize/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/examples/express/sequelize/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/examples/express/sequelize/architecture/sequelize-dal/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/examples/express/sequelize/architecture/sequelize-dal/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/examples/restify/elasticsearch/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/examples/restify/elasticsearch/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/examples/restify/mongoose/architecture/mongoose-dal/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/examples/restify/mongoose/architecture/mongoose-dal/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/json-stringify-safe/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/node_modules/json-stringify-safe/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/yakaa/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/node_modules/yakaa/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/helpers/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/helpers/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/bootstrap/mysql/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/lib/bootstrap/mysql/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned-node/node-0-10-setImmediate/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned-node/node-0-10-setImmediate/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/connect-1/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/connect-1/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/connect-2/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/connect-2/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/connect-3/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/connect-3/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express2-ejs/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express2-ejs/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-ejs/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-ejs/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-mongodb-async/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-mongodb-async/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-redis/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express3-redis/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/express4-ejs/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-2-0-0/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-2-0-0/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-4/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-4/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-6.9/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/hapi-6.9/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mongodb-native-1-1-7/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mongodb-native-1-1-7/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mongodb-native-1-3-19/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mongodb-native-1-3-19/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mongodb-native-1-4-0/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mongodb-native-1-4-0/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mysql-0-9/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mysql-0-9/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mysql-2/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/node-mysql-2/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/restify-2-6-0/package.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/restify-2-6-0/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/params.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/lib/params.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/collector/parse-response.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/collector/parse-response.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/collector/parse-response.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/collector/parse-response.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/db/parse-sql.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/db/parse-sql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/parse-sql.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/parse-sql.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/db/parsed-statement.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/db/parsed-statement.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/parsed-statement.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/parsed-statement.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/pg.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/pg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/proxy-api-connection.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/proxy-api-connection.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/metrics-recorder/queue-time-http.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/metrics-recorder/queue-time-http.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/instrumentation/http/queue-time.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/instrumentation/http/queue-time.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/readable.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/readable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/redis.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/redis.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/recorders/redis.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/recorders/redis.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/instrumentation/redis.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/instrumentation/redis.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/instrumentation/redis.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/instrumentation/redis.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/metrics-recorder/redis.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/metrics-recorder/redis.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/collector/remote-method.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/collector/remote-method.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/remote-method.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/remote-method.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/reservoir.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/reservoir.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/restify-2-6-0/restify-capture-params.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/restify-2-6-0/restify-capture-params.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/restify-2-6-0/restify-ignoring.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/restify-2-6-0/restify-ignoring.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/restify-2-6-0/restify-router.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/restify-2-6-0/restify-router.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/restify-2-6-0/restify-rum.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/versioned/restify-2-6-0/restify-rum.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/restify.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/instrumentation/restify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/normalizer/rule.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/metrics/normalizer/rule.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/rum_client_config.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/rum_client_config.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/sampler.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/sampler.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/sampler.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/sampler.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/transaction/trace/segment.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/transaction/trace/segment.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/send-errors.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/send-errors.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/send-metrics.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/send-metrics.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/send-trace.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/send-trace.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/shimmer.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/shimmer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/shimmer.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/shimmer.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/transaction/trace/sql.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/transaction/trace/sql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/api/ssl-connection.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/api/ssl-connection.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/api/ssl-error-data.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/api/ssl-error-data.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/ssl-harvest.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/ssl-harvest.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/api/ssl-metric-data.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/api/ssl-metric-data.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/ssl-send-errors.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/ssl-send-errors.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/ssl-send-metrics.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/ssl-send-metrics.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/ssl-send-trace.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/ssl-send-trace.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/ssl-start-stop.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/ssl-start-stop.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/api/ssl-transaction-sample-data.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/api/ssl-transaction-sample-data.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/start-stop.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/agent/start-stop.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/db/statement-matcher.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/db/statement-matcher.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/util/stream-sink.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/util/stream-sink.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/node_modules/json-stringify-safe/stringify.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/node_modules/json-stringify-safe/stringify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/api/stub.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/api/stub.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/stub_api.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/stub_api.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/util/sum-children.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/util/sum-children.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/timer.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/timer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/timer.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/timer.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/trace-aggregator.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/trace-aggregator.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/transaction/trace-async-propagation.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/transaction/trace-async-propagation.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/trace-segment.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/trace-segment.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/trace.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/trace.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/tracer.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/tracer.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/api/transaction-sample-data.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/api/transaction-sample-data.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/transaction.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/transaction.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/transaction_segment_terms.json" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/lib/cross_agent_tests/transaction_segment_terms.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/uninstrumented.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/uninstrumented.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/integration/uninstrumented.tap.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/integration/uninstrumented.tap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/lib/util/urltils.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/lib/util/urltils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/newrelic/test/unit/urltils.test.js" afterPath="$PROJECT_DIR$/node_modules/newrelic/test/unit/urltils.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/lib/util.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/lib/util.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="trend.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,47 +711,37 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="11.111111" vertical-offset="1380" max-vertical-offset="6690">
-              <caret line="72" column="38" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/connection/base.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3360" max-vertical-offset="7725">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/db.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-77.48148" vertical-offset="6053" max-vertical-offset="33030">
-              <caret line="543" column="22" selection-start-line="543" selection-start-column="11" selection-end-line="543" selection-end-column="22" />
+            <state vertical-scroll-proportion="-6.3703704" vertical-offset="578" max-vertical-offset="6690">
+              <caret line="50" column="89" selection-start-line="50" selection-start-column="89" selection-end-line="50" selection-end-column="89" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/scripts/index.js">
+        <entry file="file://$PROJECT_DIR$/node_modules/socket.io/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4468" max-vertical-offset="7125">
-              <caret line="331" column="30" selection-start-line="331" selection-start-column="30" selection-end-line="331" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/scripts/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.477707" vertical-offset="960" max-vertical-offset="7125">
+              <caret line="79" column="23" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12658228" vertical-offset="0" max-vertical-offset="474">
+            <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="450">
               <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
               <folding />
             </state>
@@ -125,8 +776,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/public/js/scripts/index.js" />
       </list>
     </option>
   </component>
@@ -234,122 +886,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="socket.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="socket.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mongodb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mongodb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mongodb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -378,14 +914,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="768" y="23" width="672" height="873" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32822478" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32822478" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23502304" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22887865" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -565,42 +1101,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/scripts/index.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4468" max-vertical-offset="7125">
-          <caret line="331" column="30" selection-start-line="331" selection-start-column="30" selection-end-line="331" selection-end-column="30" />
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="450">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="11.111111" vertical-offset="1380" max-vertical-offset="6690">
-          <caret line="72" column="38" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="38" />
+        <state vertical-scroll-proportion="-6.3703704" vertical-offset="578" max-vertical-offset="6690">
+          <caret line="50" column="89" selection-start-line="50" selection-start-column="89" selection-end-line="50" selection-end-column="89" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/connection/base.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/socket.io/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7725">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="498">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/db.js">
+    <entry file="file://$PROJECT_DIR$/public/js/scripts/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-77.48148" vertical-offset="6053" max-vertical-offset="33030">
-          <caret line="543" column="22" selection-start-line="543" selection-start-column="11" selection-end-line="543" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12658228" vertical-offset="0" max-vertical-offset="474">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.477707" vertical-offset="960" max-vertical-offset="7125">
+          <caret line="79" column="23" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
           <folding />
         </state>
       </provider>

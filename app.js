@@ -49,7 +49,7 @@ io.sockets.on("connection", function (socket) {
 
 function getTrends(){
 	twit.get('/trends/place.json', {include_entities:false, id: 1}, function(data, res) {
-	    global.env.trends = data;
+        global.env.trends = data;
 	});
 	}
 

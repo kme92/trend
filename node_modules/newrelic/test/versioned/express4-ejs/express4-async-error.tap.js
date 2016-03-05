@@ -1,9 +1,9 @@
 'use strict'
 
 var path = require('path')
-  , test = require('tap').test
-  , fork = require('child_process').fork
-  
+var test = require('tap').test
+var fork = require('child_process').fork
+var skip = require('./skip')
 
 /*
  *
@@ -11,8 +11,11 @@ var path = require('path')
  *
  */
 var COMPLETION = 27
+var TEST_OPTIONS = {
+  skip: skip()
+}
 
-test("Express 4 async throw", function (t) {
+test("Express 4 async throw", TEST_OPTIONS, function (t) {
   var erk = fork(path.join(__dirname, 'erk.js'))
   var timer
 

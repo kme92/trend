@@ -72,14 +72,14 @@ $(document).ready(function(){
 	});
 		
 	socket.on('trends', function (data) {
-		$('#trending-list ol').empty();
-		$(data[0].trends).each(function(){
-			console.log($(this)[0].name);
-			$('#trending-list ol').append('<li class="trend-link"><a href="#" onclick="setTracker(this);">' + 
-					$(this)[0].name + '</a></li>');
-		});
-		document.getElementById('console').innerHTML = 'trends: ' + JSON.stringify(data[0].trends, strip_id, 2); 
-	});
+        $('#trending-list ol').empty();
+        var trends = data[0].trends;
+        console.log(trends);
+        for (var i = 0; i < 10; i++) {
+            $('#trending-list ol').append('<li class="trend-link"><a href="#" onclick="setTracker(this);">' +
+            $(trends)[i].name + '</a></li>');
+        }
+    });
 	
 	socket.on('volume', function (data) {
 		document.getElementById('console2').innerHTML = 'total volume: ' + JSON.stringify(data[0], strip_id, 2);
